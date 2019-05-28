@@ -2,7 +2,7 @@
 const path = require('path');
 
 module.exports = {
-    entry: './frontend/index.jsx',
+    entry: './frontend/forthegram.jsx',
     output: {
         path: path.resolve(__dirname, 'app', 'assets', 'javascripts'),
         filename: 'bundle.js'
