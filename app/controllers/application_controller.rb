@@ -24,6 +24,7 @@ class ApplicationController < ActionController::Base
 
     # Return the user associated with the session_token (if token is valid)
     @current_user ||= User.find_by_session_token(session[:session_token])
+    #find_by or find_by_session_token rails magic?
   end
 
   def logged_in?
