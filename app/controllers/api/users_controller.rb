@@ -1,8 +1,8 @@
 class Api::UsersController < ApplicationController
 
-    def new 
+    def new
         @users = User.all
-        render :new 
+        render :new
     end 
 
     def create 
@@ -12,8 +12,10 @@ class Api::UsersController < ApplicationController
             render json: @user 
         else  
             render json: @user.errors.full_messages, status: 401
-        end 
+        end
     end 
+
+    private
 
     def user_params
         params.require(:user).permit(:username, :email, :password)
