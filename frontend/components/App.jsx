@@ -12,7 +12,7 @@ import LogInFormContainer from './user_form/login_form_container';
 
 
 const App = () => (
-    <div>
+    <div className="App">
         <header>
         <h1>FortheGram via App</h1>
         <GreetingContainer />
