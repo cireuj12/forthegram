@@ -5,17 +5,17 @@ import {
 
 import merge from 'lodash/merge';
 
-const _nullSesion = {
-    currentUser: null,
-}   
+const _nullSession = Object.freeze({
+    id: null
+});
 
-export default (state =_nullSesion, action) => {
+export default (state =_nullSession, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_CURRENT_USER:
-            return merge({}, { currentUser: action.user }); // no old state
+            return { id: action.currentUser.id }; // no old state
         case LOGOUT_CURRENT_USER:
-            return _nullSesion;
+            return _nullSession;
         default:
             return state;
     }
