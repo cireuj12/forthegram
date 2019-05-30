@@ -21,7 +21,7 @@ class SignUpForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user);
+        this.props.processForm(user).then(() => this.props.history.push('/'));
     }
 
     renderErrors() {
@@ -40,37 +40,37 @@ class SignUpForm extends React.Component {
         return (
             <div className="signup-form-container">
                 <form onSubmit={this.handleSubmit} className="signup-form-box">
-                    {this.renderErrors()}
+                        <div className="errors">{this.renderErrors()}</div> 
                     <div className="signup-form">
-                        <label>Username:
+                        <label>
                     <input type="text"
                                 value={this.state.username}
                                 placeholder="Username"
                                 onChange={this.update('username')}
                                 className="signup-input" />
                         </label><br />
-                        <label>Full Name:
+                        <label>
                     <input type="text"
                                 value={this.state.fullname}
                                 placeholder="Full Name"
                                 onChange={this.update('fullname')}
                                 className="signup-input" />
                         </label><br />
-                        <label>Email:
+                        <label>
                     <input type="text"
                                 value={this.state.email}
                                 placeholder="Email"
                                 onChange={this.update('email')}
                                 className="signup-input" />
                         </label><br />
-                        <label>Password:
+                        <label>
                     <input type="password"
                                 value={this.state.password}
                                 placeholder="Password"
                                 onChange={this.update('password')}
                                 className="signup-input" />
                         </label><br />
-                        <input className="session-submit" type="submit" value="signup" />
+                        <input className="session-submit" type="submit" value="Sign up" />
                     </div>
                 </form>
             </div>

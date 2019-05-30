@@ -1,3 +1,262 @@
 // Place all the styles related to the api/users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.App {
+    background-color: #fafafa
+ }
+
+
+   // @font-face {
+   // font-family: 'Billabong';
+   // font-style: normal;
+   // font-weight: normal;
+   // src: url('../../fonts/Billabong.woff');
+   // }
+//  div {
+//    box-align: stretch;
+//    align-items: stretch;
+//    -ms-flex-align: stretch;
+//     align-items: stretch;
+//     border: 0 solid #000;
+//     box-sizing: border-box;
+//     display: -ms-flexbox;
+//     display: flex;
+//     box-orient: vertical;
+//     box-direction: normal;
+//     flex-direction: column;
+//     -ms-flex-direction: column;
+//     flex-direction: column;
+//     flex-shrink: 0;
+//     -ms-flex-negative: 0;
+//     flex-shrink: 0;
+//     margin: 0;
+//     padding: 0;
+//     position: relative;
+//  }
+
+   @font-face {
+   font-family: 'Billabong';
+   font-style: normal;
+   font-weight: normal;
+   src: local('Billabong'), url('Billabong.woff') format('woff');
+   }
+
+.login-form-container {
+   display: flex;
+   justify-content: center;
+   margin-top: 100px;
+ }
+
+ .login-form {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+ }
+
+ .login-input {
+   margin-left: 20px;
+ }
+
+ .login-link-button {
+    justify-content: center;
+ }
+
+ .login-form-box {
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 1px;
+    margin: 0 0 10px;
+    padding: 10px 0;
+ }
+
+ .session-submit {
+    background-color: #3897f0;
+    border: 1px solid #3897f0;
+    border-radius: 4px;
+    color: #fff;
+    position: relative;    
+    width: auto;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    font-weight: 600;
+    padding: 5px 9px;
+    text-align: center;
+    text-transform: inherit;
+    text-overflow: ellipsis;
+ }
+
+  .signup-form-container {
+   display: flex;
+   justify-content: center;
+   margin-top: 25px;
+   margin-bottom: 25px;
+ }
+
+ .signup-form {
+   display: flex;
+   justify-content: center;
+   flex-direction: column;
+ }
+
+ .signup-input {
+   margin-left: 20px;
+ }
+
+ .signup-form-box {
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+    border-radius: 1px;
+    margin: 0 0 10px;
+    padding: 10px 0;
+ }
+
+ .login-button  {
+    background-color: #3897f0;
+    border: 1px solid #3897f0;
+    border-radius: 4px;
+    color: #fff;
+    position: relative; 
+    width: 100%;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: block;
+    font-weight: 600;
+    padding: 5px 9px;
+    text-align: center;
+    text-transform: inherit;
+    text-overflow: ellipsis;
+ }
+ 
+
+ .signup-button {
+    background-color: #3897f0;
+    border: 1px solid #3897f0;
+    border-radius: 4px;
+    color: #fff;
+    position: relative;  
+ }
+
+   .login-signup {
+      align-self: flex-end;
+      padding: 10px;
+   }
+
+   .login-signup-container {
+      align-self: flex-end;
+      padding: 10px;
+   }
+ 
+ .main-box {
+    box-orient: horizontal;
+    box-direction: normal;
+    flex-direction: row;
+    box-flex: 1;
+    flex-grow: 1;
+    box-pack: center;
+    justify-content: center;
+    margin: 30px auto 0;
+    max-width: 935px;
+    padding-bottom: 44px;
+    width: 100%;
+    box-align: stretch;
+    align-items: stretch;
+    display: flex;
+    position: relative;
+ }
+    .instagram-photo-container {
+       align-self: center;
+       flex-basis: 454px;
+       height: 618px;
+       margin-left: -35px;
+       margin-right: -15px;
+       box-align: stretch;
+       align-items: stretch;
+       box-sizing: border-box;
+       display: flex;
+       box-orient: vertical;
+       box-direction: normal;
+       flex-direction: column;
+       position: relative;
+       background-image: url(https://www.instagram.com/static/images/homepage/home-phones.png/43cc71bb1b43.png)
+    }
+      
+      .instagram-photo{
+         margin: 99px 0 0 151px;
+         position: relative;
+         background-image: url(../../images/ig.jpg);
+    }
+
+
+    .splash-content-container {
+          box-flex: 1;
+          flex-grow: 1;
+          box-pack: center;
+          justify-content: center;
+          margin-top: 12px;
+          max-width: 350px;
+          width: 100%;
+    }
+   
+    .greeting-h2 {
+      font-weight: 600;
+      line-height: 20px;
+      font-size: 17px;
+      margin: 0 40px 10px;
+      color: #999;
+      text-align: center;
+      display: block;
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    }
+
+    .splash-content {
+      background-color: #fff;
+      border: 1px solid #e6e6e6;
+      border-radius: 1px;
+      margin: 0 0 10px;
+      padding: 10px 0;
+      display: inline-block;
+      align-items: center;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+
+      .instagram {
+         font-family: 'Cookie', cursive; 
+         align-self: flex-start; 
+         display: flex;
+         text-align: center;
+	      font-size: 3.6rem;
+         justify-content: center;
+         padding-top: 10px;
+         padding-bottom: 10px;
+      }
+
+   .or-container {
+      box-orient: horizontal;
+      box-direction: normal;
+      flex-direction: normal;
+      display: flex;
+      justify-content: center;
+      margin-top: 25px;
+      margin-bottom: 25px;
+   }
+
+   .or-text {
+      color: #999;
+      box-flex: 0;
+      flex-grow: 0;
+      flex-shrink: 0;
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 15px;
+      text-transform: uppercase;
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+   }

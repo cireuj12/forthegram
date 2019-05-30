@@ -19,7 +19,7 @@ class LogInForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user);
+        this.props.processForm(user).then(() => this.props.history.push('/'));
     }
 
     renderErrors() {
@@ -38,7 +38,7 @@ class LogInForm extends React.Component {
         return (
         <div className="login-form-container">
             <form onSubmit={this.handleSubmit} className="login-form-box">
-                {this.renderErrors()}
+                    <div className="errors">{this.renderErrors()}</div> 
             <div className="login-form">
                 <label>Username:
                     <input type="text"
