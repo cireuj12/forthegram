@@ -1,42 +1,37 @@
 import React from 'react';
 import * as ReactDOM from 'react-dom'
 import { Link } from 'react-router-dom';
-import {default as Navbar, MenuElementKind} from 'react-navbar';
-import { IntlProvider } from 'react-intl'
 
 
-const { ITEM, DROPDOWN } = MenuElementKind
+const NavBar = ({ currentUser, logout }) => (
+    <nav>
+        <div className="navBar">
+            <div className="navBarContainer">
 
-const menuItems = [{
-    kind: DROPDOWN,
-    title: 'menu.dd1',
+                <div className="navBar-left-side">
 
-    items: [
-        { kind: ITEM, title: 'menu.i11', href: '/resource-1-1', target: '_blank' },
-        { kind: ITEM, title: 'menu.i12', href: '/resource-1-2' }
-    ]
-},
-{ kind: ITEM, title: 'menu.i1', href: '/resource-1' },
-{ kind: ITEM, title: 'menu.i2', href: '/resource-2' }]
+                    <a className="navBar-instagram-logo" href="/">
+                        <img src="https://image.flaticon.com/icons/png/512/87/87390.png"
+                            title="instagram-logo"
+                             alt="instagram"></img>
+                    </a>
+                    <div className="navBar-line"></div>
+                    <a className="navBar-instagram" href="/">FortheGram</a>
+                </div>
 
-const localeSpecificIcuMessagesForTheWholeAppCompiledOnTheServer = {
-    'menu.dd1': 'Drop-down-1',
-    'menu.i11': 'Item-1-1',
-    'menu.i12': 'Item-1-2',
-    'menu.i1': 'Item-1',
-    'menu.i2': 'Item-2',
-    'menu.i3': 'Item-3',
-    'menu.dd2': 'Drop-down-2',
-    'menu.i21': 'Item-2-1',
-    'menu.i22': 'Item-2-2'
-
-    // ...
-}
-
-export const NavBarContainer = () => (
-    <IntlProvider
-        locale='en'
-        messages={localeSpecificIcuMessagesForTheWholeAppCompiledOnTheServer}>
-        <Navbar {...{ menuItems}} />
-    </IntlProvider>
+                <div className="navBar-right-side">
+                    <a href="explore"></a>
+                    <a href="postphoto"></a>
+                    <a href="userprofile"></a>
+                    <button className="navBar-logout" onClick={logout}>
+                        <img src="https://cdn3.iconfinder.com/data/icons/basic-user-interface-application/32/INSTAGRAM_ICON_SETS-12-512.png"
+                             title="logout"
+                             alt ="logout1"></img>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
  );
+
+ export default NavBar;
