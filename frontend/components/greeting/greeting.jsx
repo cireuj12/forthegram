@@ -24,27 +24,28 @@ const Greeting = ({currentUser, logout}) => {
                             <span className="or-text">OR</span>
                         </div>
                         <nav className="login-signup">
-                                <SignUpFormContainer />
+                                {/* <SignUpFormContainer /> */}
                             <div>
 
                             </div>
                     
-                            {/* <div className="login-signup-container">
+                            <div className="login-signup-container">
                                 <Link to="/signup"><button type="button" className="signup-button">
                                     Sign Up!</button>
                                 </Link>
-                            </div> */}
+                            </div>
                         </nav>
             </div>
             </div>
         </div>
-    );
+    );                           
 
     const personalGreeting = () => (
         <hgroup className="header-group">
             <h2 className="header-name">Hello, {currentUser.username}!</h2>
             <button className="header-button" onClick={logout}>Log Out</button>
         </hgroup>
+        //Insert Nav Bar here? or insert Nav bar in App to generate at login
     );
 
     return currentUser ? personalGreeting() : sessionLinks();
