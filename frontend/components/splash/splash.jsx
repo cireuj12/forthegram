@@ -12,7 +12,7 @@ const splash = ({ currentUser, logout }) => {
             </div>
             <div className="splash-content-container">
                 <div className="splash-content">
-                    <div className="instagram">FortheGram</div>
+                    <h1 className="instagram">FortheGram</h1>
                     <h2 className="greeting-h2">Sign up to see photos and videos from your friends.</h2>
                     <div className="login-signup-container">
                         <Link to="/login" className="login-link-button">

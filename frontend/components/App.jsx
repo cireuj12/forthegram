@@ -10,14 +10,12 @@ import GreetingContainer from './greeting/greeting_container';
 import SignUpFormContainer from './user_form/signup_form_container';
 import LogInFormContainer from './user_form/login_form_container';
 import { AuthRoute } from '../utils/route_util';
-import { navBar } from './navbar/navbar';
 import SplashContainer from './splash/splash_container';
 
 
 const App = () => (
     <div className="App">
         <header>
-        {/* <navBar /> */}
         <GreetingContainer />
         <Switch>    
                 <Route exact path='/' component={SplashContainer} />
