@@ -1,4 +1,4 @@
-import * PostApiUtil from '../util/post_api_util';
+import * as PostApiUtil from '../utils/post_api_util';
 
 export const RECEIVE_ALL_POSTS = "RECEIVE_ALL_POSTS";
 export const RECEIVE_POST = "RECEIVE_POST";
@@ -38,7 +38,7 @@ const receivePost = post => {
     }
 }
 
-const deletePost = postId => {
+const removePost = postId => {
     return {
         type: REMOVE_POST,
         postId
