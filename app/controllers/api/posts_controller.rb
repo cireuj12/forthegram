@@ -26,6 +26,7 @@ class Api::PostsController < ApplicationController
             render :show
         else 
             render json: @post, status: :unprocessable_entity #or status: 422
+        end
     end
 
     def destroy
@@ -35,7 +36,8 @@ class Api::PostsController < ApplicationController
             render :show 
         else  
             render json: @post.errors.full_messages, status: 422
-
+        end
+    end
 
     private 
     # need to add delete in this controller, to remove posts
