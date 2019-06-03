@@ -1,0 +1,39 @@
+
+
+ .App {
+  background-color: #fafafa;
+  margin: 0;
+  height:100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.main-box {
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: center;
+    margin: 30px auto 0;
+    max-width: 935px;
+    width: 100%;
+    align-items: stretch;
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    flex-direction: row;
+    vertical-align: baseline;
+    margin-bottom: 300px;
+}
+
+.footer {
+  flex-direction: row;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: blue;
+  text-align: center;
+  justify-content: space-between;
+  margin-bottom: 100px;
+  display: inline-block;
+  align-items: stretch;
+}

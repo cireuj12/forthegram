@@ -7,7 +7,7 @@ const splash = ({ currentUser, logout }) => {
         <div className="main-box">
             <div className="instagram-photo-container">
                 <div className="instagram-photo-holder">
-
+                    <div className="iphone-image"></div>
                 </div>
             </div>
             <div className="splash-content-container">
@@ -21,7 +21,9 @@ const splash = ({ currentUser, logout }) => {
                         </Link>
                     </div >
                     <div className="or-container">
+                        <div className="or-border"></div>
                         <span className="or-text">OR</span>
+                        <div className="or-border"></div>
                     </div>
                     <nav className="login-signup">
                         <SignUpFormContainer />
@@ -35,7 +37,14 @@ const splash = ({ currentUser, logout }) => {
                             </Link>
                         </div> */}
                     </nav>
+                    <div>
+                        <p className="p-terms">By signing up, you agree to our Terms, Data Policy and Cookies Policy</p>
+                    </div>
                 </div>
+                <div className="have-an-account">
+                    <p className="have-an-account-p">Have an account? Log in.
+                        </p>
+                    </div>
             </div>
         </div>
     );

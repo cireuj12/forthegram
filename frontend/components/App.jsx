@@ -17,14 +17,21 @@ const App = () => (
     <div className="App">
         <header>
         <GreetingContainer />
-        <Switch>    
-                <Route exact path='/' component={SplashContainer} />
-                <AuthRoute /*exact*/ path="/login" component={LogInFormContainer} />
-                <AuthRoute /*exact*/ path="/signup" component={SplashContainer} />
-        </Switch>
         </header>
             {/* are the switches even neccesary? */}
-        
+
+        <Switch>
+            <Route exact path='/' component={SplashContainer} />
+            <AuthRoute /*exact*/ path="/login" component={LogInFormContainer} />
+            <AuthRoute /*exact*/ path="/signup" component={SplashContainer} />
+        </Switch>
+  
+    <div className="footer">  
+        <div><a>LinkedIn</a></div>
+        <div><a>Website</a></div>
+        <div><a>GitHub</a></div>
+        <div><a>Instagram</a></div>
+    </div>
     </div>
 );
 
