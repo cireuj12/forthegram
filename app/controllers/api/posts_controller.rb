@@ -2,7 +2,7 @@ class Api::PostsController < ApplicationController
     before_action :require_logged_in
 
     def create 
-        @post = current_user.posts.new(post_params)
+        @post = Post.new(post_params) #current_user.posts
 
         if @post.save
             render :show
