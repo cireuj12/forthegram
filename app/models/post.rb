@@ -13,7 +13,7 @@ class Post < ApplicationRecord
 
     validates :caption, presence: true
     
-    validates :ensure_photo
+    validate :ensure_photo
 
     belongs_to :author,
         class_name: :User
