@@ -16,6 +16,8 @@ export const createPost = post => dispatch => (
     PostApiUtil.createPost(post).then(post => dispatch(receivePost(post)))
 );
 
+//need to add in a success and failure callback
+
 export const updatePost = post => dispatch => (
     PostApiUtil.updatePost(post).then(post => dispatch(receivePost(post)))
 );

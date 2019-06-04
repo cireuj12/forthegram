@@ -7,6 +7,7 @@
 
 
 .post-index-item {
+    margin-top: 100px;
     width: 610px;
     height: 850px;
     background-color: lightblue;
@@ -35,4 +36,9 @@
 .like-counter {
     width: inherit;
     
+}
+
+.image-preview {
+    width: 400px;
+    height: 400px;
 }

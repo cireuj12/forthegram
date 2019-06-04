@@ -16,7 +16,9 @@ export const createPost = post => (
     $.ajax({
         method: 'POST',
         url: `api/posts`,
-        data: { post }
+        data: post , // is this nesting neccesary? { post }?
+        contentType: false,
+        processData: false
     })
 )
 

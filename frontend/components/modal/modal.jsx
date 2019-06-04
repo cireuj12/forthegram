@@ -1,7 +1,7 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import PhotoUploadForm from '../navbar/photo_upload';
+import PhotoUploadFormContainer from '../navbar/photo_upload_container';
 
 function Modal({ modal, closeModal }) {
     if (!modal) {
@@ -10,7 +10,7 @@ function Modal({ modal, closeModal }) {
     let component;
     switch (modal) {
         case 'uploadPhotoForm':
-            component = <PhotoUploadForm />;
+            component = <PhotoUploadFormContainer />;
             break;
         default:
             return null;
@@ -32,7 +32,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        closeModal: () => dispatch(closeModal())
+        closeModal: () => dispatch(closeModal()),
     };
 };
 

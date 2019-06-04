@@ -2,11 +2,13 @@ import { connect } from 'react-redux';
 import React from 'react';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import PhotoUploadForm from '../navbar/photo_upload';
+import { createPost } from '../../actions/post_actions';
 
-const mapStateToProps = ({ errors }) => {
+
+//author_id
+const mapStateToProps = state => {
     return {
-        errors: errors.session,
-        formType: 'login',
+        errors: state.errors.session,
     };
 };
 
@@ -16,7 +18,8 @@ const mapDispatchToProps = dispatch => {
             <button onClick={() => dispatch(openModal('uploadPhotoForm'))}>
       </button>
         ),
-        closeModal: () => dispatch(closeModal())
+        closeModal: () => dispatch(closeModal()),
+        createPost: post => dispatch(createPost(post))
     };
 };
 
