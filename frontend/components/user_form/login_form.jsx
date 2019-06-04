@@ -64,7 +64,7 @@ class LogInForm extends React.Component {
                                     onChange={this.update('password')}
                                     className="login-input" />
                             </label><br/>
-                            <input className="session-submit" type="submit" value="Log in" />
+                            <input className="login-session-submit" type="submit" value="Log in" />
                         </div>
                         </form>
                     </div>

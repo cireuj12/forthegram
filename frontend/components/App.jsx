@@ -11,10 +11,12 @@ import SignUpFormContainer from './user_form/signup_form_container';
 import LogInFormContainer from './user_form/login_form_container';
 import { AuthRoute } from '../utils/route_util';
 import SplashContainer from './splash/splash_container';
+import Modal from './modal/modal';
 
 
 const App = () => (
     <div className="App">
+        <Modal />
         <header>
         <GreetingContainer />
         </header>
