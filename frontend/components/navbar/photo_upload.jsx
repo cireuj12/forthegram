@@ -4,12 +4,14 @@ export default class PhotoUploadForm extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            author_id: "2", //need to change -- currently hardcoded
-            caption: "",
-            photoFile: null,
-            photoUrl: null
-        }
+        // this.state = {
+        //     //need to change -- currently hardcoded author_id:""
+        //     author_id: "2",
+        //     caption: "",
+        //     photoFile: null,
+        //     photoUrl: null
+        // } 
+        this.state = this.props.testForm
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleFile = this.handleFile.bind(this);
         this.handleInput = this.handleInput.bind(this);
@@ -35,13 +37,13 @@ export default class PhotoUploadForm extends React.Component {
         e.preventDefault();
         const formData = new FormData();
         formData.append('post[caption]', this.state.caption);
-        formData.append('post[author_id]', this.state.author_id)
+        formData.append('post[author_id]', this.state.author_id);
 
         if (this.state.photoFile) {
             formData.append('post[photo]', this.state.photoFile);
         }
-        this.props.createPost(formData).then(() => this.props.history.push('/'))
-    } //createpost is not a function..
+        this.props.createPost(formData)//.then(() => this.props.history.push('/')) // () => dispatch(closeModal()) test this
+    } //cannot read property push of undefined -- so close modal and reload the main page
 
     render() { //this is rendering
         console.log(this.state);

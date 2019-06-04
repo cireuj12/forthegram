@@ -6,9 +6,16 @@ import { createPost } from '../../actions/post_actions';
 
 
 //author_id
-const mapStateToProps = state => {
+const mapStatetoProps = (state) => {
+    const testForm = {
+        //need to change -- currently hardcoded author_id:""
+        author_id: state.session.id,
+        caption: "",
+        photoFile: null,
+        photoUrl: null
+    }
     return {
-        errors: state.errors.session,
+        testForm
     };
 };
 
@@ -23,4 +30,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PhotoUploadForm);
+export default connect(mapStatetoProps, mapDispatchToProps)(PhotoUploadForm);

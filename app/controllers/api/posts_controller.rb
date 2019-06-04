@@ -2,7 +2,7 @@ class Api::PostsController < ApplicationController
     before_action :require_logged_in
 
     def create 
-        @post = Post.new(post_params) #current_user.posts
+        @post = Post.new(post_params) #current_user.posts #Post.new
         if @post.save
             render json: {message: "You did it!"}
             # render :show
@@ -11,7 +11,7 @@ class Api::PostsController < ApplicationController
         end 
     end 
 
-    def index
+    def index #is this even being used?
         @posts = Post.all 
         render :index #optional? render @posts?
     end
@@ -43,7 +43,9 @@ class Api::PostsController < ApplicationController
     private 
     # need to add delete in this controller, to remove posts
     def post_params
-        params.require(:post).permit(:caption, :author_id, :photo) #author id not working
+        params.require(:post).permit(:caption, :author_id , :photo) #author_id not working :author_id
     end 
 
 end
+
+#How do I use author_id and current_user.posts

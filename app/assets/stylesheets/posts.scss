@@ -13,8 +13,12 @@
     background-color: lightblue;
 }
 
+.post-index-container {
+    width: inherit;
+}
+
 .post-index-item-image {
-    width: 610px;
+    width: inherit;
     height: 550px;
 }
 
