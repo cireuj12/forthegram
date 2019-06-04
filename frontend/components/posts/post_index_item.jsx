@@ -7,7 +7,8 @@ const PostIndexItem = ({post}) => {
             <div className= "post-index-container">
             <h2>User info will be here</h2>
             <img className="post-index-item-image" src={post.photoUrl} />
-            <div className="post-buttons-container">buttons here</div>
+            <div className="post-buttons-container">buttons here with heart</div>
+            <div className="like-counter">like counter here with state refresh</div>
             <div className="comments-container"></div>
             <div>{post.caption}</div>
             </div>

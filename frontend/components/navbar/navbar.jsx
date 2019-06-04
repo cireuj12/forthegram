@@ -1,9 +1,11 @@
 import React from 'react';
 import * as ReactDOM from 'react-dom'
 import { Link } from 'react-router-dom';
+import Modal from '../modal/modal';
+//import photoupload container?
 
 
-const NavBar = ({ currentUser, logout }) => (
+const NavBar = ({ currentUser, openModal, logout }) => (
     <nav>
         <div className="navBar">
             <div className="navBarContainer">
@@ -21,7 +23,11 @@ const NavBar = ({ currentUser, logout }) => (
 
                 <div className="navBar-right-side">
                     <a href="explore"></a>
-                    <a href="postphoto"></a>
+                    <button className="navBar-addphoto" onClick={() => openModal('uploadPhotoForm')}>
+                        <img src="https://cdn3.iconfinder.com/data/icons/instagram-18/512/199_Instagram_Plus_Sets_Upload-512.png"
+                            title="upload"
+                            alt ="upload1"></img>
+                    </button>
                     <a href="userprofile"></a>
                     <button className="navBar-logout" onClick={logout}>
                         <img src="https://cdn3.iconfinder.com/data/icons/basic-user-interface-application/32/INSTAGRAM_ICON_SETS-12-512.png"

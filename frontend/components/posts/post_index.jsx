@@ -5,9 +5,9 @@ class PostIndex extends React.Component {
     
     // constructor(props) {
     //     super(props);
-    //     // this.state = {
-    //     //     posts: []
-    //     // };
+    // //     // this.state = {
+    // //     //     posts: []
+    // //     // };
     // }
 
     componentDidMount() {

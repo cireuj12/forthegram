@@ -70,7 +70,7 @@ class SignUpForm extends React.Component {
                                 onChange={this.update('password')}
                                 className="signup-input" />
                         </label><br />
-                        <input className="session-submit" type="submit" value="Sign up" />
+                        <input className="signup-session-submit" type="submit" value="Sign up" />
                     </div>
                 </form>
             </div>
