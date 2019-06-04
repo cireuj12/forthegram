@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SignUpFormContainer from '../user_form/signup_form_container';
+import PostIndexContainer from '../posts/post_index_container';
 
 const splash = ({ currentUser, logout }) => {
     const splashsignupform = () => (
@@ -48,9 +49,11 @@ const splash = ({ currentUser, logout }) => {
             </div>
         </div>
     );
-
+                        //post index container on the side
     const splashnotneeded = () => (
-        <div><span>Splash not needed or render feed</span></div>
+        <div className="overall-div">
+            <PostIndexContainer />
+        </div>
     )
 
     return currentUser ? splashnotneeded() : splashsignupform();    

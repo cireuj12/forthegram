@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :posts, except: [:new, :edit] #destroy create update show index
   end
 
-  
+  # resources :posts, only: :show
+
   root to: 'static_pages#root'
 end

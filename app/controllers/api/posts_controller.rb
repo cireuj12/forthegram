@@ -3,7 +3,6 @@ class Api::PostsController < ApplicationController
 
     def create 
         @post = Post.new(post_params) #current_user.posts
-
         if @post.save
             render :show
         else  
@@ -13,15 +12,16 @@ class Api::PostsController < ApplicationController
 
     def index
         @posts = Post.all 
+        render :index #optional?
     end
 
     def show 
         @post = Post.find(params[:id])
+        render :show #optional?
     end
 
     def update 
         @post = Post.find(params[:id])
-
         if @post.update(post_params)
             render :show
         else 

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import splash from './splash';
 
-const mapStatetoProps = ({ session, entities: { users } }) => {
+const mapStatetoProps = ({ session, entities: { users , posts } }) => {
     return {
         currentUser: users[session.id]
     };
