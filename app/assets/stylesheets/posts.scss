@@ -95,3 +95,17 @@
     width: 400px;
     height: 400px;
 }
+
+
+.post-show-page {
+    display: flex;
+    justify-content: center;
+    height: 800px;
+    width: 800px;
+    flex-direction: column;
+} 
+
+.post-show-container {
+    display: flex;
+    justify-content: center;
+}

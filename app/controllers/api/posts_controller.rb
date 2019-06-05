@@ -2,7 +2,7 @@ class Api::PostsController < ApplicationController
     before_action :require_logged_in
 
     def create 
-        @post = Post.new(post_params) #current_user.posts #Post.new
+        @post = current_user.posts.new(post_params) #current_user.posts #Post.new
         if @post.save
             render json: {message: "You did it!"}
             # render :show
@@ -43,7 +43,7 @@ class Api::PostsController < ApplicationController
     private 
     # need to add delete in this controller, to remove posts
     def post_params
-        params.require(:post).permit(:caption, :author_id , :photo) #author_id not working :author_id
+        params.require(:post).permit(:caption, :photo) #author_id not working :author_id
     end 
 
 end

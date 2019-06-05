@@ -16,9 +16,14 @@ class Post < ApplicationRecord
     validate :ensure_photo
 
     belongs_to :author,
-        class_name: :User
+          primary_key: :id,
+          foreign_key: :author_id,
+          class_name: :User
 
     has_one_attached :photo
+
+    has_many :comments,
+        foreign_key: :post_id
 
     def ensure_photo
         unless self.photo.attached?

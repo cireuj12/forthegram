@@ -9,7 +9,7 @@ import React from 'react';
 import GreetingContainer from './greeting/greeting_container';
 import SignUpFormContainer from './user_form/signup_form_container';
 import LogInFormContainer from './user_form/login_form_container';
-import { AuthRoute } from '../utils/route_util';
+import { AuthRoute, ProtectedRoute } from '../utils/route_util';
 import SplashContainer from './splash/splash_container';
 import Modal from './modal/modal';
 import PostShowContainer from './posts/post_show_container'
@@ -24,10 +24,12 @@ const App = () => (
             {/* are the switches even neccesary? */}
 
         <Switch>
+            {/* <GreetingContainer /> */}
             <Route exact path='/' component={SplashContainer} />
+            <Route exact path='/posts' component={SplashContainer} /> {/* is this neccesary */}
             <AuthRoute /*exact*/ path="/login" component={LogInFormContainer} />
             <AuthRoute /*exact*/ path="/signup" component={SplashContainer} />
-            {/* <Route exact path="/posts/:postId" component={PostShowContainer} /> */}
+            <ProtectedRoute exact path="/posts/:postId" component={PostShowContainer} />
         </Switch>
 {/*   
     <div className="footer">  
