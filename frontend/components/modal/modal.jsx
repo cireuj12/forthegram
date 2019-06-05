@@ -12,6 +12,9 @@ function Modal({ modal, closeModal }) {
         case 'uploadPhotoForm':
             component = <PhotoUploadFormContainer />;
             break;
+        case 'PostMenu':
+            component = <PostMenu />;
+            break;
         default:
             return null;
     }
