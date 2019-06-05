@@ -14,7 +14,7 @@ class DemoLogInForm extends React.Component {
     handleDemo(e) {
         e.preventDefault();
         const demo = Object.assign({}, { username: "hello1", password: "hello1" });
-        this.props.processForm(demo).then(() => this.props.history.push('/'));
+        this.props.processForm(demo);//.then(() => this.props.history.push('/'));
     }
 
 
