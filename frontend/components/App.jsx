@@ -12,6 +12,7 @@ import LogInFormContainer from './user_form/login_form_container';
 import { AuthRoute } from '../utils/route_util';
 import SplashContainer from './splash/splash_container';
 import Modal from './modal/modal';
+import PostShowContainer from './posts/post_show_container'
 
 
 const App = () => (
@@ -26,6 +27,7 @@ const App = () => (
             <Route exact path='/' component={SplashContainer} />
             <AuthRoute /*exact*/ path="/login" component={LogInFormContainer} />
             <AuthRoute /*exact*/ path="/signup" component={SplashContainer} />
+            {/* <Route exact path="/posts/:postId" component={PostShowContainer} /> */}
         </Switch>
 {/*   
     <div className="footer">  
