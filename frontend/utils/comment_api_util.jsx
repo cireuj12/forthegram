@@ -5,7 +5,7 @@
 //     })
 // )
 
-export const fetchComments = () => (
+export const fetchComments = (post) => (
     $.ajax({
         method: 'GET',
         url: `api/posts/${post.id}/comments`,

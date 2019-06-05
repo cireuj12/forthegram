@@ -4,7 +4,8 @@ import { fetchPosts } from '../../actions/post_actions';
 
 const mapStateToProps = state => {
     return {
-        posts: Object.keys(state.entities.posts).map(id => state.entities.posts[id])
+        posts: Object.values(state.entities.posts)
+        // posts: Object.keys(state.entities.posts).map(id => state.entities.posts[id])
     };
 };
 

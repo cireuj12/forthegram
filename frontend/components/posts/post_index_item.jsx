@@ -2,14 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const PostIndexItem = ({post}) => {
+    const hackypost = post.id - 1 //This is a huge problem. The array of posts starts with position 0, but the actual id starts with 1
     return (
         <li className="post-index-item">
             <div className= "post-index-container">
                     <h2 className="post-user-header"><span>User info will be here</span>
-                        <div className="post-three-dots-container">
+                    <div className="post-three-dots-container"><Link className="post-index-item-caption" to={`/posts/${hackypost}`}>
                             <img className="post-three-dots" src="https://static.thenounproject.com/png/658625-200.png"
                                 title="instagram-three-dots"
-                                alt="instagram-three-dots"></img>
+                            alt="instagram-three-dots"></img></Link>
                         </div>
                     </h2>
                 <img className="post-index-item-image" src={post.photoUrl} />
