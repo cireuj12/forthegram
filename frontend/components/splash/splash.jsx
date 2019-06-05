@@ -27,9 +27,9 @@ const splash = ({ currentUser, logout }) => {
                         <div className="or-border"></div>
                     </div>
                     <nav className="login-signup">
-                        <SignUpFormContainer />
+                        <SignUpFormContainer /> 
                         <div>
-
+                                {/* Put demo login directly in SignUpFormContainer */}
                         </div>
 
                         {/* <div className="login-signup-container">
@@ -43,7 +43,8 @@ const splash = ({ currentUser, logout }) => {
                     </div>
                 </div>
                 <div className="have-an-account">
-                    <p className="have-an-account-p">Have an account? Log in.
+                    <p className="have-an-account-p">Have an account? 
+                        <Link to="/login" className="login-link"> Log in</Link> 
                         </p>
                     </div>
             </div>
