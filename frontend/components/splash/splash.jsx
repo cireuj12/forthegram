@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import SignUpFormContainer from '../user_form/signup_form_container';
 import PostIndexContainer from '../posts/post_index_container';
+import DemoLoginContainer from '../user_form/demo_login_container';
 
 const splash = ({ currentUser, logout }) => {
     const splashsignupform = () => (
@@ -16,10 +17,11 @@ const splash = ({ currentUser, logout }) => {
                     <h1 className="instagram">FortheGram</h1>
                     <h2 className="greeting-h2">Sign up to see photos and videos from your friends.</h2>
                     <div className="login-signup-container">
-                        <Link to="/login" className="login-link-button">
+                        {/* <Link to="/login" className="login-link-button">
                             <button type="button" className="login-button">
                                 Log in</button>
-                        </Link>
+                        </Link> */}
+                        <DemoLoginContainer />
                     </div >
                     <div className="or-container">
                         <div className="or-border"></div>
@@ -42,9 +44,9 @@ const splash = ({ currentUser, logout }) => {
                         <p className="p-terms">By signing up, you agree to our Terms, Data Policy and Cookies Policy</p>
                     </div>
                 </div>
-                <div className="have-an-account">
-                    <p className="have-an-account-p">Have an account? 
-                        <Link to="/login" className="login-link"> Log in</Link> 
+                    <div className="have-an-account">
+                        <p className="have-an-account-p">Have an account? 
+                            <Link to="/login" className="login-link"> Log in</Link> 
                         </p>
                     </div>
             </div>

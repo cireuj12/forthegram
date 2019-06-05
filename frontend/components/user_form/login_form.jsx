@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class LogInForm extends React.Component {
     constructor(props) {
@@ -68,7 +69,7 @@ class LogInForm extends React.Component {
                         </div>
                         </form>
                     </div>
-                    <div className="or-container">
+                    {/* <div className="or-container">
                         <span className="or-text">OR</span>
                     </div>
                     <div className="login-form-container">
@@ -77,8 +78,13 @@ class LogInForm extends React.Component {
                                 <input className="demo-session-submit" type="submit" value="Demo Log in" />
                             </div>
                         </form>
-                    </div>
+                    </div> */}
                 </div>
+                    <div className="have-an-account">
+                        <p className="have-an-account-p">Don't have an account?
+                                <Link to="/signup" className="signup-link"> Sign up</Link>
+                        </p>
+                    </div>
             </div>
         );
     }
