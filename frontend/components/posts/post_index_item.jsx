@@ -7,40 +7,36 @@ import { openModal, closeModal } from '../../actions/modal_actions'
 
 //this will now be a class item
 
-// const mapStatetoProps = state => {
+const mapStatetoProps = (state, ownProps) => {
+    return {
+        username: state.entities.posts[ownProps.post.id].username
+    };
+};
+/*convention is to call it `ownProps` but because we pass in `post` to `PostIndexItem` 
+as inline props - if we want access to `post.id`, we first need to make `post` available to msp*/
+
+
+//FOR LATER!
+// const mapDispatchtoProps = dispatch => {
 //     return {
-//         users: state.entites.users
+//         openModal: modal => dispatch(ope nModal(modal)),
+//         closeModal: () => dispatch(closeModal())
 //     };
 // };
 
-const mapDispatchtoProps = dispatch => {
-    return {
-        openModal: modal => dispatch(openModal(modal)),
-        closeModal: () => dispatch(closeModal())
-    };
-};
-
 class PostIndexItem extends React.Component {
-    //const hackypost = post.id - 1 //This is a huge problem. The array of posts starts with position 0, but the actual id starts with 1
+
     constructor(props) {
         super(props);
-        // this.state = this.props.post;
-    //    this.authorId = this.props.post.author_id
-    //    this.generateUserName = this.generateUserName.bind(this);
-    //    this.props.userid = this.props.users.id
-    }
 
-    // generateUserName(authorid) {
-    //     if (authorid && authorid === this.props.userid) {
-    //         return this.props.users.username
-    //     }
-    // }
+    }
     
     render() {
+        console.log(this.props)
     return (
         <li className="post-index-item">
             <div className= "post-index-container">
-                    <h2 className="post-user-header"><span>{this.props.post.username}</span>
+                    <h2 className="post-user-header"><span>{this.props.username}</span>
                     <div className="post-three-dots-container"> 
                     {/* <button className="navBar-addphoto" onClick={() => this.props.openModal('PostMenu')}> */}
                     <Link className="post-index-item-caption" to={`/posts/${this.props.post.id}`}>
@@ -87,6 +83,6 @@ class PostIndexItem extends React.Component {
 // export default PostIndexItem;
 
 export default connect(
+    mapStatetoProps,
     null,
-    mapDispatchtoProps
 )(PostIndexItem);

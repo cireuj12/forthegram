@@ -3,6 +3,8 @@ class Api::PostsController < ApplicationController
 
     def create 
         @post = current_user.posts.new(post_params) #current_user.posts #Post.new
+        # @post = Post.new(post_params)
+        # @post.author_id = current_user.id
         if @post.save
             render json: {message: "You did it!"}
             # render :show

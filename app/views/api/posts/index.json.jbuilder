@@ -14,8 +14,8 @@
 end
 
 @posts.each do |post|
-    json.set! post.author.id do  
-        json.extract! post.author, :id, :username
+    json.set! post.id do  
+        json.extract! post.author, :username
     end
 end
 

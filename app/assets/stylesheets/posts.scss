@@ -76,6 +76,9 @@
 .post-user-header {
     height: 40px;
     padding: 8px;
+    color: #262626;
+    font-weight: 600px;
+    white-space: nowrap;
 }
 
 .post-index-item-image {
@@ -105,7 +108,7 @@
     display: flex;
     align-items: center;
     border-radius: 3px;
-    border: 1px solid #e6e6e6;
+    // border: 1px solid #e6e6e6;
 }
 
 .heart {
