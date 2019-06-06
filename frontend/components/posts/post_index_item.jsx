@@ -36,10 +36,11 @@ class PostIndexItem extends React.Component {
     return (
         <li className="post-index-item">
             <div className= "post-index-container">
-                    <h2 className="post-user-header"><span>{this.props.username}</span>
-                    <div className="post-three-dots-container"> 
-                    {/* <button className="navBar-addphoto" onClick={() => this.props.openModal('PostMenu')}> */}
-                    <Link className="post-index-item-caption" to={`/posts/${this.props.post.id}`}>
+                    <h2 className="post-user-header">
+                        <div className="post-username">{this.props.username}</div>
+                        <div className="post-three-dots-container"> 
+                        {/* <button className="navBar-addphoto" onClick={() => this.props.openModal('PostMenu')}> */}
+                        <Link className="post-index-item-caption" to={`/posts/${this.props.post.id}`}>
                             <img className="post-three-dots" src="https://static.thenounproject.com/png/658625-200.png"
                                 title="instagram-three-dots"
                             alt="instagram-three-dots"></img>
@@ -61,17 +62,20 @@ class PostIndexItem extends React.Component {
                     </div>
                     <div className="like-counter"></div>
                     <div className="comments-container">
-                    <div>{this.props.post.caption}</div>
-                    <div className="comment-add-form-container">
-                        <form className="comment-form">
-                            <label htmlFor="post-caption"></label>
-                            <input type="text"
-                                placeholder="Add a comment..."
-                                id="post-comment"/>
-                            {/* <button>Make a new Post!</button> */}
-                        </form>
-                    </div>
-                </div>
+                        <div className="initial-caption">
+                            <div className="initial-caption-username">{this.props.username}</div>
+                            <div className="initial-caption-caption">{this.props.post.caption}</div>
+                        </div>
+                        <div className="comment-add-form-container">
+                            <form className="comment-form">
+                                <label htmlFor="post-caption"></label>
+                                <input type="text"
+                                    placeholder="Add a comment..."
+                                    id="post-comment"/>
+                                {/* <button>Make a new Post!</button> */}
+                            </form>
+                        </div>
+                 </div>
 
             </div>
         </li>

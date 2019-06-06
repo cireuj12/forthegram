@@ -7,16 +7,23 @@ class PostShow extends React.Component {
     componentDidMount() {
         this.props.fetchPost(this.props.match.params.postId);
     }
-
+        //need to fix this; does not work when refreshing
     render() {
 
         return (
             <div className="post-show-page">
                 <div className="post-show-container">
-                <div className="post-show-caption">{this.props.post.caption}</div>
-                <img className="post-index-item-image" src={this.props.post.photoUrl} />
-                <Link to="/">Back to Index</Link>
-                </div>
+                    <img className="post-show-item-image" src={this.props.post.photoUrl} />
+                            <div className="post-show-container-right-side">
+                                <div className="post-show-username-box">
+                                    <div className="post-show-username">{this.props.post.username}</div>
+                                    <Link to="/" className="button-back-to-index">Back to Index</Link>
+                                </div>
+                                <div className="post-show-caption-box">
+                                    <div className="post-show-caption">{this.props.post.caption}</div>
+                                </div>
+                            </div>
+                    </div>
             </div>
         );
     }
