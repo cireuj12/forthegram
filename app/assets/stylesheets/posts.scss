@@ -3,6 +3,37 @@
     padding-top: 60px;
     margin-top: 60px;
     width: 935px;
+    height: 100%;
+
+    .right-side-container {
+        position: fixed;
+        right: 15%;
+        top: 150px;
+        background-color: aqua;
+        width: 100px;
+        height: calc(100% - 300px);
+
+        .profiles-box {
+            height: 30%;
+            //photo give it a small size and display in-line block
+            //and the other two divs next to each other
+        }
+
+        .stories-box {
+            height: 40%;
+            background-color: white;
+        }
+
+        .suggestions-box {
+            height: 30%;
+        }
+    }
+
+    .footer-index {
+        position: fixed;
+        right: 15%;
+        top: 600px;
+    }
 }
 
 

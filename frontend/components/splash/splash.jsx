@@ -50,12 +50,35 @@ const splash = ({ currentUser, logout }) => {
                         </p>
                     </div>
             </div>
+                <div className="footer-login">  
+                        <div><a href="www.linkedin.com/in/eric-ju">LinkedIn</a></div>
+                        <div><a>Website</a></div>
+                        <div><a href="www.github.com">GitHub</a></div>
+                        <div><a href="www.instagram.com">Instagram</a></div>
+                </div>
         </div>
     );
                         //post index container on the side
     const splashnotneeded = () => (
         <div className="overall-div">
             <PostIndexContainer />
+                <div className="right-side-container">
+                    <div className="profiles-box">
+                        <div></div>
+                    </div>
+                    <div className="stories-box">
+                        <div></div>
+                    </div>
+                    <div className="suggestions-box">
+                        <div></div>
+                    </div>
+                </div>
+                <div className="footer-index">  
+                        <div><a>LinkedIn</a></div>
+                        <div><a>Website</a></div>
+                        <div><a>GitHub</a></div>
+                        <div><a>Instagram</a></div>
+                </div>
         </div>
     )
 

@@ -9,31 +9,37 @@
 }
 
 .main-box {
-    flex-direction: row;
-    flex-grow: 1;
-    justify-content: center;
-    margin: 30px auto 0;
-    max-width: 935px;
-    width: 100%;
-    align-items: stretch;
-    display: flex;
-    position: relative;
-    flex-wrap: wrap;
-    flex-direction: row;
-    vertical-align: baseline;
-    margin-bottom: 300px;
+  justify-content: center;
+  max-width: 935px;
+  width: 100%;
+  align-items: stretch;
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  flex-direction: row;
+  vertical-align: baseline;
+  height: 100%;
+  overflow: hidden; //change the fixed widths and heights of the photo container and the splash container
 }
 
-.footer {
+.footer-login {
   flex-direction: row;
-  position: fixed;
-  left: 0;
-  bottom: 0;
   width: 100%;
-  color: blue;
+  color: #003569;
   text-align: center;
   justify-content: space-between;
   margin-bottom: 100px;
-  display: inline-block;
   align-items: stretch;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+
+  & > div {
+    display: inline-block;
+    width: 100px;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
 }

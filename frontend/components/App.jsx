@@ -31,13 +31,7 @@ const App = () => (
             <AuthRoute /*exact*/ path="/signup" component={SplashContainer} />
             <ProtectedRoute exact path="/posts/:postId" component={PostShowContainer} />
         </Switch>
-{/*   
-    <div className="footer">  
-        <div><a>LinkedIn</a></div>
-        <div><a>Website</a></div>
-        <div><a>GitHub</a></div>
-        <div><a>Instagram</a></div>
-    </div> */}
+ 
     </div>
 );
 
