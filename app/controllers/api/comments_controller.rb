@@ -1,4 +1,4 @@
-class Api:CommentsController < ApplicatonController
+class Api::CommentsController < ApplicatonController
 
     before_action :require_logged_in
 
