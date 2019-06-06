@@ -17,9 +17,12 @@ class PostShow extends React.Component {
                             <div className="post-show-container-right-side">
                                 <div className="post-show-username-box">
                                     <div className="post-show-username">{this.props.post.username}</div>
-                                    <Link to="/" className="button-back-to-index">Back to Index</Link>
+                            <Link to="/" className="button-back-to-index"><img className="post-three-dots" src="https://static.thenounproject.com/png/658625-200.png"
+                                title="instagram-three-dots"
+                                alt="instagram-three-dots"></img></Link>
                                 </div>
                                 <div className="post-show-caption-box">
+                                    <div className="post-show-caption-username">{this.props.post.username}</div>
                                     <div className="post-show-caption">{this.props.post.caption}</div>
                                 </div>
                             </div>

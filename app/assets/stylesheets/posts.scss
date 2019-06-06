@@ -212,7 +212,8 @@
         }
 
         .post-show-container-right-side{
-                width: 335px;    
+                width: 335px;
+                font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;    
 
                 .post-show-username-box {
                     border-top: 1px solid #efefef;
@@ -221,10 +222,17 @@
                     right: 0;
                     width: inherit;
                     display: flex;
-                    justify-content: space-evenly;
+                    justify-content: space-between;
+                    align-items: center;
 
                     .post-show-username {
-                        margin-right: 60px;
+                        margin-left: 40px;
+                        color: #262626;
+                        font-weight: 600;
+                    }
+
+                    .button-back-to-index {
+                        margin-right: 20px;
                     }
                 }
 
@@ -233,6 +241,19 @@
                     height: 72px;
                     right: 0;
                     width: inherit;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .post-show-caption-username {
+                        margin-left: 40px;
+                        color: #262626;
+                        font-weight: 600;
+                    }
+
+                    .post-show-caption {
+                        margin-right: 150px;
+                    }
                 }
         }
     }
