@@ -42,7 +42,7 @@ export default class PhotoUploadForm extends React.Component {
         if (this.state.photoFile) {
             formData.append('post[photo]', this.state.photoFile);
         }
-        this.props.createPost(formData)//.then(() => this.props.history.push('/')) // () => dispatch(closeModal()) test this
+        this.props.createPost(formData).then(() => dispatch(closeModal()))//.then(() => this.props.history.push('/')) // () => dispatch(closeModal()) test this
     } //cannot read property push of undefined -- so close modal and reload the main page
 
     render() { //this is rendering

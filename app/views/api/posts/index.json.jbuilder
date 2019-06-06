@@ -6,7 +6,16 @@
 # end
 
 
-json.array! @posts do |post|
-    json.extract! post, :id, :caption, :author_id
-    json.photoUrl url_for(post.photo)
+@posts.each do |post|
+    json.set! post.id do
+        json.extract! post, :id, :caption, :author_id 
+        json.photoUrl url_for(post.photo)
+    end
 end
+
+@posts.each do |post|
+    json.set! post.author.id do  
+        json.extract! post.author, :id, :username
+    end
+end
+

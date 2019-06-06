@@ -15,7 +15,7 @@ class PostIndex extends React.Component {
     }
 
     render() {
-        const posts = this.props.posts.map(post => {
+        const posts = this.props.posts.reverse().map(post => { //reverse makes the most recent picture show up but disrupts show page for first post
             return (
                 <div className="index-container" key={post.id}>
                 <PostIndexItem

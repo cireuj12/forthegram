@@ -2,6 +2,7 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import PhotoUploadFormContainer from '../navbar/photo_upload_container';
+import PostMenuContainer from './post_menu';
 
 function Modal({ modal, closeModal }) {
     if (!modal) {
@@ -13,7 +14,7 @@ function Modal({ modal, closeModal }) {
             component = <PhotoUploadFormContainer />;
             break;
         case 'PostMenu':
-            component = <PostMenu />;
+            component = <PostMenuContainer />;
             break;
         default:
             return null;

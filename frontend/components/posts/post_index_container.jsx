@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import PostIndex from './post_index';
 import { fetchPosts } from '../../actions/post_actions';
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = state => {
     return {
@@ -11,7 +12,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchPosts: () => dispatch(fetchPosts())
+        fetchPosts: () => dispatch(fetchPosts()),
+        openModal: modal => dispatch(openModal(modal)),
+        closeModal: () => dispatch(closeModal())
     }
 }
 

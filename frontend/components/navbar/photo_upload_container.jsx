@@ -24,7 +24,7 @@ const mapDispatchToProps = dispatch => {
         photoForm: (
             <button onClick={() => dispatch(openModal('uploadPhotoForm'))}>
       </button>
-        ),
+        ), // is this photoForm even neccesary?? this reference is incorrect
         closeModal: () => dispatch(closeModal()),
         createPost: post => dispatch(createPost(post))
     };
