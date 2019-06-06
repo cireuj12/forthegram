@@ -34,11 +34,34 @@
             right: 0;
         }
 
-            .navBar-logout {
+            .navBar-explore {
+                display: flex;
+                width: 40px;
+                height: 40px;
+                margin-right: 20px;
+                opacity: .8;
+            }
+
+            .navBar-user {
                 display: flex;
                 width: 30px;
                 height: 30px;
+                margin-right: 20px;
             }
+
+            .navBar-logout {
+                display: flex;
+                width: 90px;
+                height: 30px;
+                background-color: transparent;
+                font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+                font-size: 14px;
+                text-align: center;
+                display: inline-block;
+                border: 1px solid #312e2e;
+                border-radius: 5px;
+            }
+
             .navBar-addphoto {
                 width: 40px;
                 display: flex;

@@ -22,18 +22,21 @@ const NavBar = ({ currentUser, openModal, logout }) => (
                 </div>
 
                 <div className="navBar-right-side">
-                    <a href="explore"></a>
+
+                    <a className="navBar-explore" href="explore">
+                        <img src="https://www.freeiconspng.com/uploads/compass-icon-22.png" width="40px" height="40px" alt="Compass Photos Icon" /></a>
                     <button className="navBar-addphoto" onClick={() => openModal('uploadPhotoForm')}>
                         <img src="https://cdn3.iconfinder.com/data/icons/instagram-18/512/199_Instagram_Plus_Sets_Upload-512.png"
                             title="upload"
                             alt ="upload1"></img>
                     </button>
-                    <a href="userprofile"></a>
-                    <button className="navBar-logout" onClick={logout}>
+                    <a href="userprofile" className="navBar-user">
                         <img src="https://cdn3.iconfinder.com/data/icons/basic-user-interface-application/32/INSTAGRAM_ICON_SETS-12-512.png"
-                             title="logout"
-                             alt ="logout1"></img>
-                    </button>
+                            title="logout"
+                            alt="logout1"></img>
+                    </a>
+                    <button className="navBar-logout" onClick={logout} value="logout">Log Out</button>
+
                 </div>
             </div>
         </div>
