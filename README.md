@@ -24,7 +24,7 @@ Here is the working Demo of the site : http://forthegram1.herokuapp.com/
 * [Future Features to be implemented](#Future-Features-to-be-implemented)
 
 ## Features
-* A secure User Authentication System that employs both front and back end protection
+* A secure user authentication system that employs both the front and back end.
 * The ability to create, edit and delete Posts that consist of a caption and a photo(stored in AWS)
 
 
