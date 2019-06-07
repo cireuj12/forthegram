@@ -1,5 +1,10 @@
 # FortheGram
 
+FortheGram is a functional clone of one of the most popular apps in the world - Instagram. 
+
+## Table of Contents
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
