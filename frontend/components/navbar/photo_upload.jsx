@@ -59,9 +59,9 @@ export default class PhotoUploadForm extends React.Component {
                     onChange={this.handleInput}/>
                 <input className="select-file" type="file"
                     onChange={this.handleFile}/>
-                <div className="image-preview-label">Image preview</div>
+                <div className="image-preview-label">Image Preview</div>
                     {preview}
-                <button className="photo-upload-button">Make a new Post!</button>
+                <button className="photo-upload-button">Upload your Post!</button>
             </form>
             </div>
         )
