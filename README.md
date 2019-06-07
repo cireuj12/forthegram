@@ -31,7 +31,8 @@ Here is the working Demo of the site : http://forthegram1.herokuapp.com/
 
 
 ## Screenshots and Examples
-![Image of Site](/img/screenshot.png)
+<!-- ![Image of Site](/img/screenshot.png) -->
+<img src="./img/screenshot.png" width="50%" height="50%">.
 
 
 
