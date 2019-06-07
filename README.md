@@ -14,13 +14,53 @@ Here is the working Demo of the site : http://forthegram1.herokuapp.com/
 
 ## Table of Contents
 
-* Features
-* Screenshots and Examples
-* 
+* [Features](#features)
+* [Screenshots and Examples](#Screenshots-and-Examples)
+* [Technologies Used](#Technologies-Used)
+* [Features Analysis](#Features-Analysis)
+* [State](#State)
+* [Components](#Components)
+* [FAQ](#FAQ)
+* [Future Features to be implemented](#Future-Features-to-be-implemented)
 
 ## Features
 * A secure User Authentication System that employs both front and back end protection
 * The ability to create, edit and delete Posts that consist of a caption and a photo(stored in AWS)
+
+
+
+
+## Screenshots and Examples
+
+
+
+
+## Technologies Used
+
+
+
+
+## Features Analysis
+
+
+
+
+## State 
+
+
+
+
+## Components
+
+
+
+
+## FAQ
+
+
+
+
+## Future Features to be Implemented
 
 
 This README would normally document whatever steps are necessary to get the
