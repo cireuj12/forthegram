@@ -1,8 +1,26 @@
 # FortheGram
 
+<table>
+<tr>
+<td>
 FortheGram is a functional clone of one of the most popular apps in the world - Instagram. 
+</td>
+</tr>
+<table>
+
+## Demo
+
+Here is the working Demo of the site : http://forthegram1.herokuapp.com/
 
 ## Table of Contents
+
+* Features
+* Screenshots and Examples
+* 
+
+## Features
+* A secure User Authentication System that employs both front and back end protection
+* The ability to create, edit and delete Posts that consist of a caption and a photo(stored in AWS)
 
 
 This README would normally document whatever steps are necessary to get the
