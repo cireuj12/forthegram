@@ -50,18 +50,20 @@ export default class PhotoUploadForm extends React.Component {
         console.log(this.props);
         const preview = this.state.photoUrl ? <img className="image-preview" src={this.state.photoUrl}/> : null;
         return (
-            <form onSubmit={this.handleSubmit}>
-                <label htmlFor="post-caption">Caption of Post</label>
-                <input type="text"
+            <div className="photo-submit-form-container">
+            <form className="photo-submit-form" onSubmit={this.handleSubmit}>
+                <input className="photo-caption-input" type="text"
                     id="post-caption"
+                    placeholder="Write a caption..."
                     value={this.state.caption}
                     onChange={this.handleInput}/>
-                <input type="file"
+                <input className="select-file" type="file"
                     onChange={this.handleFile}/>
-                <h3>Image preview</h3>
-                {preview}
-                <button>Make a new Post!</button>
+                <div className="image-preview-label">Image preview</div>
+                    {preview}
+                <button className="photo-upload-button">Make a new Post!</button>
             </form>
+            </div>
         )
     }
 
