@@ -31,7 +31,7 @@ Here is the working Demo of the site : http://forthegram1.herokuapp.com/
 
 
 ## Screenshots and Examples
-![Image of Site](cireuj12.github.com/forthegram/Screen_Shot 2019-06-07_at_10.42.00_AM.png)
+![Image of Site](/img/screenshot.png)
 
 
 
