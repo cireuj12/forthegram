@@ -88,6 +88,7 @@ Upon logging into the site. Just like Instagram, users can upload a photo via a 
 * The ability to comment on posts
 * The ability to like posts and comments
 * The ability to create a user profile and follow other users
+* The ability to search for other posts and users
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
