@@ -19,7 +19,7 @@ class PostShow extends React.Component {
     render() {
         // debugger
         const { post } = this.props; // This line is neccesary
-        if (!post) return null;
+        if (!post) return null; // (!this.props.post)
 
         // this at least renders part of the page
 
