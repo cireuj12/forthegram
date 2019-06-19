@@ -3,12 +3,25 @@ import { Link } from 'react-router-dom';
 // import PostIndexItem from './post_index_item';
 
 class PostShow extends React.Component {
-    
+    // debugger
     componentDidMount() {
+        // debugger
         this.props.fetchPost(this.props.match.params.postId);
     }
+ 
+    // componentDidUpdate(prevProps) { //CHECK IF THIS FIXED 1)
+    //     // debugger
+    //     if (prevProps.post && (prevProps.post.id != this.props.match.params.postId)) {
+    //         this.props.fetchPost(this.props.match.params.postId);
+    //     }
+    // }
         //need to fix this; does not work when refreshing
     render() {
+        // debugger
+        const { post } = this.props; // This line is neccesary
+        if (!post) return null;
+
+        // this at least renders part of the page
 
         return (
             <div className="post-show-page">

@@ -61,11 +61,11 @@ export default class PhotoUploadForm extends React.Component {
                     onChange={this.handleFile}/>
                 <div className="image-preview-label">Image Preview</div>
                     {preview}
-                <button className="photo-upload-button">Upload your Post!</button>
+                <button className="photo-upload-button">Upload your Post!</button> 
             </form>
             </div>
         )
-    }
+    }//FIX THE BUTTON THAT IS FAILING!!!!
 
 }
 

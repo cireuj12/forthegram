@@ -6,7 +6,7 @@ class Api::PostsController < ApplicationController
         # @post = Post.new(post_params)
         # @post.author_id = current_user.id
         if @post.save
-            render json: {message: "You did it!"}
+            render json: {message: "You did it!"} # this is not even rendering
             # render :show
         else  
             render json: @post.errors.full_messages, status: 422 #or status: 422
@@ -14,7 +14,7 @@ class Api::PostsController < ApplicationController
     end 
 
     def index #is this even being used?
-        @posts = Post.all 
+        @posts = Post.all.with_attached_photo #with_attached_photo prevents a n+1 query.
         render :index #optional? render @posts?
     end
 

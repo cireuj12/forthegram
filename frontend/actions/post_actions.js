@@ -7,7 +7,7 @@ export const RECEIVE_POST = "RECEIVE_POST";
 export const REMOVE_POST = "REMOVE_POST";
 
 export const fetchPosts = () => dispatch => (
-    PostApiUtil.fetchPosts().then(post => dispatch(receiveAllPosts(post)))
+    PostApiUtil.fetchPosts().then(posts => dispatch(receiveAllPosts(posts)))
 );
 
 export const fetchPost = id => dispatch => (
@@ -35,7 +35,7 @@ const receiveAllPosts = posts => {
     }
 }
 
-const receivePost = post => {
+const receivePost = ({post}) => { //putting in the {} fixed the show issue?? This deconstructing was neccesary and will help for later)
     return {
         type: RECEIVE_POST,
         post

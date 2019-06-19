@@ -32,6 +32,7 @@ class PostIndexItem extends React.Component {
     }
     
     render() {
+        // debugger
         console.log(this.props)
     return (
         <li className="post-index-item">
