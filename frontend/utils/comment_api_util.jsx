@@ -8,15 +8,15 @@
 export const fetchComments = (post) => (
     $.ajax({
         method: 'GET',
-        url: `api/posts/${post.id}/comments`,
+        url: `api/comments`,
     })
 )
 
-export const createComment = (post, comment) => (
+export const createComment = (comment) => (
     $.ajax({
         method: 'POST',
-        url: `api/posts/${post.id}/comments`,
-        data: { comment }, // is this nesting neccesary? { post }
+        url: `api/comments`,
+        data: comment , // is this nesting neccesary? { post }
     })
 )
 
