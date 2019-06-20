@@ -2,16 +2,21 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'
 import PostShow from './post_show';
-import { fetchPost } from '../../actions/post_actions';
+import { fetchPost, deletePost } from '../../actions/post_actions';
+import { openModal, closeModal } from '../../actions/modal_actions'
 
 const mapStateToProps = (state, ownProps) => {
     return {
-    post: state.entities.posts[ownProps.match.params.postId]}
+    post: state.entities.posts[ownProps.match.params.postId]
+    }
     //add current user later to make edit/delete optiosn based on user only
 };
 
 const mapDispatchToProps = dispatch => ({
-    fetchPost: id => dispatch(fetchPost(id))
+    fetchPost: id => dispatch(fetchPost(id)),
+    deletePost: id => dispatch(deletePost(id)),
+    openModal: modal => dispatch(openModal(modal)),
+    closeModal: () => dispatch(closeModal)
 });
 
 export default withRouter(connect(

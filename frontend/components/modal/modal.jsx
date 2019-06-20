@@ -2,7 +2,7 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import PhotoUploadFormContainer from '../navbar/photo_upload_container';
-import PostMenuContainer from './post_menu';
+import PostMenuContainer from './post_menu_container';
 
 function Modal({ modal, closeModal }) {
     if (!modal) {

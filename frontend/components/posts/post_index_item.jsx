@@ -19,7 +19,7 @@ as inline props - if we want access to `post.id`, we first need to make `post` a
 //FOR LATER!
 // const mapDispatchtoProps = dispatch => {
 //     return {
-//         openModal: modal => dispatch(ope nModal(modal)),
+//         openModal: modal => dispatch(openModal(modal)),
 //         closeModal: () => dispatch(closeModal())
 //     };
 // };
