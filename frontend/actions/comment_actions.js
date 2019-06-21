@@ -1,12 +1,13 @@
 
 //// Should this all exist in the post reducer because a post neededs to be pased in the util to generate the comments ////
-import * as CommentAPIUtil from `../utils/comment_api_util`
+import * as CommentApiUtil from '../utils/comment_api_util'
 
 export const RECEIVE_ALL_COMMENTS = "RECEIVE_ALL_COMMENTS";
 export const RECEIVE_COMMENT = "RECEIVE_COMMENT";
+export const REMOVE_COMMENT = "REMOVE_COMMENT";
 
 
-export const fetchComment = () => dispatch => (
+export const fetchComments = () => dispatch => (
     CommentApiUtil.fetchComments().then(comment => dispatch(receiveAllComments(comment)))
 );
 
@@ -14,6 +15,9 @@ export const createComment = comment => dispatch => (
     CommentApiUtil.createComment(comment).then(comment => dispatch(receiveComment(comment)))
 );
 
+export const deleteComment = commentId => dispatch => (
+    CommentApiUtil.deleteComment(commentId).then(comment => dispatch(removeComment(commentId)))
+);
 
 const receiveAllComments = comments => {
     return {
@@ -28,3 +32,12 @@ const receiveComment = comment => {
         comment
     }
 }
+
+const removeComment = commentId => {
+    return {
+        type: REMOVE_COMMENT,
+        commentId
+    }
+}
+
+

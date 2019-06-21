@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { openModal, closeModal } from '../../actions/modal_actions'
+import { createComment, fetchComments } from '../../actions/comment_actions';
 
 //map and mount the modal in this container and then start testing it
 
@@ -16,21 +17,29 @@ const mapStatetoProps = (state, ownProps) => {
 as inline props - if we want access to `post.id`, we first need to make `post` available to msp*/
 
 
-//FOR LATER!
-// const mapDispatchtoProps = dispatch => {
-//     return {
-//         openModal: modal => dispatch(openModal(modal)),
-//         closeModal: () => dispatch(closeModal())
-//     };
-// };
+const mapDispatchtoProps = dispatch => {
+    return {
+        createComment: comment => dispatch((createComment(comment))),
+        fetchComments: () => dispatch((fetchComments()))
+    };
+};
 
 class PostIndexItem extends React.Component {
 
     constructor(props) {
-        super(props);
-
+        super(props); //how to handle this?
+        // const commentForm = {
+        //     author_id = state.session.id,
+        //     post_id = '',
+        //     body = ''
+        // };
     }
     
+    componentDidMount() {
+        // debugger
+        this.props.fetchComments();
+    }
+
     render() {
         // debugger
         console.log(this.props)
@@ -75,7 +84,7 @@ class PostIndexItem extends React.Component {
                                 <input type="text"
                                     placeholder="Add a comment..."
                                     id="post-comment"/>
-                                {/* <button>Make a new Post!</button> */}
+                                {/* <button>Add</button> */}
                             </form>
                         </div>
                  </div>
@@ -91,5 +100,5 @@ class PostIndexItem extends React.Component {
 
 export default connect(
     mapStatetoProps,
-    null,
+    mapDispatchtoProps,
 )(PostIndexItem);
