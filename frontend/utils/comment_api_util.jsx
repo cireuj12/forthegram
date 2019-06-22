@@ -5,13 +5,14 @@ export const fetchComments = () => (
     })
 )
 
-export const createComment = (comment) => (
+export const createComment = (comment) => {
+    debugger
     $.ajax({
         method: 'POST',
         url: `api/comments`,
-        data: comment, // is this nesting neccesary? { post }
+        data: {comment}, // is this nesting neccesary? { comment }
     })
-)
+}
 
 export const deleteComment = (id) => (
     $.ajax({

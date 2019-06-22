@@ -86,7 +86,7 @@ class PostIndexItem extends React.Component {
                                     placeholder="Add a comment..."
                                     id="post-comment"/>
                             </form> */}
-                            <CommentFormContainer/>
+                            <CommentFormContainer postId={this.props.post.id}/>
                         </div>
                  </div>
 

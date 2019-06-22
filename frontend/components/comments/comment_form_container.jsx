@@ -4,8 +4,9 @@ import { createComment } from '../../actions/comment_actions';
 
 const mapStatetoProps = (state, ownProps) => {
     const comment = {
-        postId: ownProps.postId //|| null,
+        postId: ownProps.postId//|| null,
     }
+    // debugger
     return {
         comment,
         user_id: state.session.id
