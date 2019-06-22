@@ -66,6 +66,7 @@ export default class PhotoUploadForm extends React.Component {
             </div>
         )
     }//FIX THE BUTTON THAT IS FAILING!!!!
+    // Is the button actually working?
 
 }
 

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { openModal, closeModal } from '../../actions/modal_actions'
 import { createComment, fetchComments } from '../../actions/comment_actions';
+import CommentFormContainer from '../comments/comment_form_container';
 
 //map and mount the modal in this container and then start testing it
 
@@ -79,13 +80,13 @@ class PostIndexItem extends React.Component {
                             <div className="initial-caption-caption">{this.props.post.caption}</div>
                         </div>
                         <div className="comment-add-form-container">
-                            <form className="comment-form">
+                            {/*<form className="comment-form">
                                 <label htmlFor="post-caption"></label>
                                 <input type="text"
                                     placeholder="Add a comment..."
                                     id="post-comment"/>
-                                {/* <button>Add</button> */}
-                            </form>
+                            </form> */}
+                            <CommentFormContainer/>
                         </div>
                  </div>
 

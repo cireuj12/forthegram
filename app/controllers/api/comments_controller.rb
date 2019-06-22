@@ -18,7 +18,7 @@ class Api::CommentsController < ApplicationController
         render :index
     end 
 
-    def destory
+    def destroy
 
         @comment = Comment.find(params[:id])
         
@@ -34,7 +34,7 @@ class Api::CommentsController < ApplicationController
     private 
 
     def comment_params 
-        params.require(:comment).permit(:body)
+        params.require(:comment).permit(:body, :post_id)
     end
 
 end
