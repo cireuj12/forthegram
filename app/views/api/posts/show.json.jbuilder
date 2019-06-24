@@ -1,6 +1,7 @@
-# json.post do 
+json.post do 
     json.partial! '/api/posts/post', post: @post
-# end
+end
+
 
 # json.extract! @post , :id, :caption, :author_id
 
