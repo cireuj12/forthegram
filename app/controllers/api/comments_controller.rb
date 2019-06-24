@@ -3,10 +3,10 @@ class Api::CommentsController < ApplicationController
     before_action :require_logged_in
 
     def create 
-        debugger
+        # debugger
         @comment = current_user.comments.new(comment_params)
         #not using current_user
-        debugger
+        # debugger
         if @comment.save 
             render :show #change
 
@@ -36,7 +36,7 @@ class Api::CommentsController < ApplicationController
     private 
 
     def comment_params
-        debugger
+        # debugger
         params.require(:comment).permit(:body, :post_id)
     end
 

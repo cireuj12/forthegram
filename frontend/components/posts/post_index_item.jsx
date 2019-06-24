@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { openModal, closeModal } from '../../actions/modal_actions'
 import { createComment, fetchComments } from '../../actions/comment_actions';
 import CommentFormContainer from '../comments/comment_form_container';
+import CommentIndexContainer from '../comments/comment_index_container';
 
 //map and mount the modal in this container and then start testing it
 
@@ -36,10 +37,10 @@ class PostIndexItem extends React.Component {
         // };
     }
     
-    componentDidMount() {
-        // debugger
-        this.props.fetchComments();
-    }
+    // componentDidMount() {
+    //     // debugger
+    //     this.props.fetchComments();
+    // }
 
     render() {
         // debugger
@@ -78,6 +79,9 @@ class PostIndexItem extends React.Component {
                         <div className="initial-caption">
                             <div className="initial-caption-username">{this.props.username}</div>
                             <div className="initial-caption-caption">{this.props.post.caption}</div>
+                        </div>
+                        <div className="comments-list-box">
+                            <CommentIndexContainer post={this.props.post}/>
                         </div>
                         <div className="comment-add-form-container">
                             {/*<form className="comment-form">
