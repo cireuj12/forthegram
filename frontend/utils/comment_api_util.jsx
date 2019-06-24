@@ -7,7 +7,7 @@ export const fetchComments = () => (
 
 export const createComment = (comment) => {
     // debugger
-    $.ajax({
+    return $.ajax({
         method: 'POST',
         url: `api/comments`,
         data: {comment}, // is this nesting neccesary? { comment }

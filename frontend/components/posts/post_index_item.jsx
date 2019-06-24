@@ -37,14 +37,21 @@ class PostIndexItem extends React.Component {
         // };
     }
     
-    // componentDidMount() {
-    //     // debugger
-    //     this.props.fetchComments();
-    // }
+    componentDidMount() {
+        // debugger
+        this.props.fetchComments();
+    }
+
+    componentDidUpdate(prevProps) { 
+        // debugger
+        if (prevProps.comments && (prevProps.comments.length != this.props.comments.length)) {
+            this.props.fetchComments();
+        }
+    }
 
     render() {
         // debugger
-        console.log(this.props)
+        // console.log(this.props)
     return (
         <li className="post-index-item">
             <div className= "post-index-container">

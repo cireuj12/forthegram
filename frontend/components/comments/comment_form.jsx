@@ -21,7 +21,9 @@ export default class CommentForm extends React.Component {
                     post_id: this.state.postId,
                     user_id: this.props.user_id
                 }
-                this.props.createComment(commentForm)// .then and a set state?
+                this.props.createComment(commentForm).then(()=>{
+                    this.setState({body: ''})
+                })
             }
         }
     }

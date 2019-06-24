@@ -11,7 +11,7 @@ const CommentsReducer = (oldState = {}, action) => {
         case RECEIVE_ALL_COMMENTS:
             return action.comments;
         case RECEIVE_COMMENT:
-            debugger
+            // debugger
             return merge({},oldState,{[action.comment.id]: action.comment });
         case REMOVE_COMMENT:
             let newState = merge({},oldState);

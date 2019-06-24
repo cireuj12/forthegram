@@ -11,9 +11,19 @@ export const fetchComments = () => dispatch => (
     CommentApiUtil.fetchComments().then(comment => dispatch(receiveAllComments(comment)))
 );
 
-export const createComment = comment => dispatch => (
-    CommentApiUtil.createComment(comment).then(comment => dispatch(receiveComment(comment)))
-);
+// export const createComment = comment => dispatch => (
+//     CommentApiUtil.createComment(comment).then(comment => dispatch(receiveComment(comment)))
+// );
+//write to debug:
+
+export const createComment = comment => {
+    return (dispatch) => {
+        return CommentApiUtil.createComment(comment).then((promiseobj)=> {
+            // debugger
+            return dispatch(receiveComment(promiseobj));
+        })
+    }
+}
 
 export const deleteComment = commentId => dispatch => (
     CommentApiUtil.deleteComment(commentId).then(comment => dispatch(removeComment(commentId)))

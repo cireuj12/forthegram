@@ -161,6 +161,7 @@ textarea {
     border-radius: 3px;
     border: 1px solid #e6e6e6;
     padding-bottom: 10px;
+    position: relative;
 
     .initial-caption {
         display: flex;
@@ -184,8 +185,8 @@ textarea {
         display: flex;
         justify-content: end;
         align-items: baseline;
-        margin-top: 99px;
-
+        position: absolute;
+        bottom: -48px;
         .comment-form {
             
         }

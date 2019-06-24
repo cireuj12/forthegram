@@ -4,10 +4,14 @@ import { Link } from 'react-router-dom';
 
 class PostShow extends React.Component {
     // debugger
+    constructor(props) {
+        super(props);
+        this.handleDelete = this.handleDelete.bind(this)
+    }
+
     componentDidMount() {
         // debugger
         this.props.fetchPost(this.props.match.params.postId);
-        this.handleDelete = this.handleDelete.bind(this)
     }
  
     // componentDidUpdate(prevProps) { //CHECK IF THIS FIXED 1)

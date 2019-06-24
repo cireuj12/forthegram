@@ -14,6 +14,13 @@ class PostIndex extends React.Component {
         this.props.fetchPosts();
     }
 
+    componentDidUpdate(prevProps) { //CHECK IF THIS FIXED 1)
+        // debugger
+        if (prevProps.posts && (prevProps.posts.length != this.props.posts.length)) {
+            this.props.fetchPosts();
+        }
+    }
+
     render() {
         // debugger
         const posts = this.props.posts.reverse().map(post => { //reverse makes the most recent picture show up but disrupts show page for first post

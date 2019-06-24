@@ -17,7 +17,7 @@ class CommentIndex extends React.Component {
                     return (
                         <div key={comment.id}>
                             <div className="initial-caption">
-                            {/* Need to change all these labels */}
+                            {/* Need to change all these labels for caption */}
                             <div className="initial-caption-username">{comment.username}</div> 
                             <div className="initial-caption-caption">{comment.body}</div>
                             </div>
