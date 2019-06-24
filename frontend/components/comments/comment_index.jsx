@@ -14,6 +14,7 @@ class CommentIndex extends React.Component {
         // debugger
         const comments = this.props.comments.map(comment =>{
             if (this.props.post.id === comment.post_id) {
+                // debugger
                     return (
                         <div key={comment.id}>
                             <div className="initial-caption">

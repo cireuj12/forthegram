@@ -36,7 +36,7 @@ const receiveAllComments = comments => {
     }
 }
 
-const receiveComment = comment => {
+const receiveComment = (comment) => {
     return {
         type: RECEIVE_COMMENT,
         comment
