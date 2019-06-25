@@ -15,7 +15,7 @@ import HeartForm from '../likes/heart';
 const mapStatetoProps = (state, ownProps) => {
     return {
         username: state.entities.posts[ownProps.post.id].username,
-        user_id: state.session.id,
+        session_id: state.session.id,
         likes: state.entities.likes
     };
 };
@@ -47,12 +47,14 @@ class PostIndexItem extends React.Component {
         this.props.fetchComments();
     }
 
-    componentDidUpdate(prevProps) { 
-        // debugger
-        if (prevProps.comments && (prevProps.comments.length != this.props.comments.length)) {
-            this.props.fetchComments();
-        }
-    }
+    // componentDidUpdate(prevProps) { 
+    //     // debugger
+    //     if (prevProps.comments && (prevProps.comments.length != this.props.comments.length)) {
+    //         this.props.fetchComments();
+    //     }
+    // } 
+    
+    ///do I need this??
 
     render() {
         // console.log(this.props)
@@ -78,6 +80,7 @@ class PostIndexItem extends React.Component {
                             <HeartForm createLike={this.props.createLike}
                                 likes={this.props.likes}
                                 post={this.props.post}
+                                session={this.props.session_id}
                             />
                         <img className="comment" src="https://buzzhostingservices.com/images/instagram-comment-icon-1.png"
                             title="comment"
