@@ -3,7 +3,7 @@ class Api::LikesController < ApplicationController
     before_action :require_logged_in
 
     def create 
-        debugger
+        # debugger
         @like = current_user.likes.new(like_params)
 
         if @like.save 
@@ -21,6 +21,7 @@ class Api::LikesController < ApplicationController
 
     def index 
         @likes = Like.all
+        #likes = Like.where(params[:user_id]) to only return likes for that user to see
         render :index
     end
 

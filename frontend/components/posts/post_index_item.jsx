@@ -77,6 +77,7 @@ class PostIndexItem extends React.Component {
                     <div className="post-buttons-container">
                             <HeartForm createLike={this.props.createLike}
                                 likes={this.props.likes}
+                                post={this.props.post}
                             />
                         <img className="comment" src="https://buzzhostingservices.com/images/instagram-comment-icon-1.png"
                             title="comment"
