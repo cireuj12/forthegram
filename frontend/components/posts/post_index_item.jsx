@@ -5,6 +5,8 @@ import { openModal, closeModal } from '../../actions/modal_actions'
 import { createComment, fetchComments } from '../../actions/comment_actions';
 import CommentFormContainer from '../comments/comment_form_container';
 import CommentIndexContainer from '../comments/comment_index_container';
+import { createLike } from '../../actions/like_actions';
+import HeartForm from '../likes/heart';
 
 //map and mount the modal in this container and then start testing it
 
@@ -12,7 +14,9 @@ import CommentIndexContainer from '../comments/comment_index_container';
 
 const mapStatetoProps = (state, ownProps) => {
     return {
-        username: state.entities.posts[ownProps.post.id].username
+        username: state.entities.posts[ownProps.post.id].username,
+        user_id: state.session.id,
+        likes: state.entities.likes
     };
 };
 /*convention is to call it `ownProps` but because we pass in `post` to `PostIndexItem` 
@@ -22,7 +26,8 @@ as inline props - if we want access to `post.id`, we first need to make `post` a
 const mapDispatchtoProps = dispatch => {
     return {
         createComment: comment => dispatch((createComment(comment))),
-        fetchComments: () => dispatch((fetchComments()))
+        fetchComments: () => dispatch((fetchComments())),
+        createLike: like => dispatch((createLike(like)))
     };
 };
 
@@ -50,7 +55,6 @@ class PostIndexItem extends React.Component {
     }
 
     render() {
-        // debugger
         // console.log(this.props)
     return (
         <li className="post-index-item">
@@ -71,9 +75,9 @@ class PostIndexItem extends React.Component {
                     </h2>
                 <img className="post-index-item-image" src={this.props.post.photoUrl} />
                     <div className="post-buttons-container">
-                        <img className="heart" src="https://freepngimg.com/thumb/instagram/1-2-instagram-heart-transparent.png"
-                            title="heart"
-                            alt="heart"></img>
+                            <HeartForm createLike={this.props.createLike}
+                                likes={this.props.likes}
+                            />
                         <img className="comment" src="https://buzzhostingservices.com/images/instagram-comment-icon-1.png"
                             title="comment"
                             alt="comment"></img>

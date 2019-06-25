@@ -25,6 +25,8 @@ class Post < ApplicationRecord
     has_many :comments,
         foreign_key: :post_id
 
+    has_many :likes, as: :likeable
+
     def ensure_photo
         unless self.photo.attached?
             errors[:photo] << "Must be attached"
