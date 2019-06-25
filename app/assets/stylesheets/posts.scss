@@ -136,7 +136,14 @@ textarea {
     width: 25px;
     height: 25px;
     margin-left: 10px;
+
+
 }
+
+.heart:hover {
+    cursor: pointer;
+}
+
 
 .comment {
     width: 40px;
@@ -179,7 +186,55 @@ textarea {
         .initial-caption-caption {
             margin-left: 40px;
         }
+    
     }
+
+    .initial-comment {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        text-align: center;
+        margin: 5px;
+        // position: relative;
+        // display: inline-block;
+
+        .initial-comment-username {
+           margin-left: 5px;
+           color: #262626;
+           font-weight: 600;
+        }
+
+        .initial-comment-comment {
+            margin-left: 40px;
+        }
+    
+    }
+
+    .initial-comment:hover {
+        background-color: lightgrey;
+        cursor: pointer;
+    }
+
+    .initial-comment .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: black;
+        opacity: .5;
+        color: #fff;
+        text-align: center;
+        padding: 5px 0;
+        border-radius: 6px;
+       
+        /* Position the tooltip text - see examples below! */
+        position: absolute;
+        z-index: 1;
+        margin-left: 475px;
+      }
+      
+      /* Show the tooltip text when you mouse over the tooltip container */
+      .initial-comment:hover .tooltiptext {
+        visibility: visible;
+      }
 
     .comment-add-form-container {
         display: flex;

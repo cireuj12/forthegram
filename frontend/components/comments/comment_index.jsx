@@ -4,10 +4,15 @@ class CommentIndex extends React.Component {
 
      constructor(props) {
      super(props);
+     this.handleDeleteComment = this.handleDeleteComment.bind(this)
      };
 
     componentDidMount() {
         this.props.fetchComments();
+    }
+    
+    handleDeleteComment(commentId) {
+        this.props.deleteComment(commentId)
     }
     
     render() {
@@ -17,10 +22,10 @@ class CommentIndex extends React.Component {
                 // debugger
                     return (
                         <div key={comment.id}>
-                            <div className="initial-caption">
-                            {/* Need to change all these labels for caption */}
-                            <div className="initial-caption-username">{comment.username}</div> 
-                            <div className="initial-caption-caption">{comment.body}</div>
+                            <div className="initial-comment" onClick={() => {this.props.deleteComment(comment.id)}} >
+                                <div className="initial-comment-username">{comment.username}</div> 
+                                <div className="initial-comment-comment">{comment.body}</div>
+                                <span className="tooltiptext">Delete Comment</span>
                             </div>
                         </div>
                     );

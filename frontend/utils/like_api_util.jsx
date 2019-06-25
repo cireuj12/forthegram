@@ -7,10 +7,11 @@ export const createLike = (like) => {
     })
 }
 
-export const fetchLikes = () => {
+export const fetchLikes = (userId) => {
     return $.ajax({
         method: 'GET',
         url: `api/likes`,
+        data: {userId}
     })
 }
 

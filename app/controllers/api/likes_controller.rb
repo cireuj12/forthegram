@@ -20,8 +20,9 @@ class Api::LikesController < ApplicationController
     end
 
     def index 
-        @likes = Like.all
-        #likes = Like.where(params[:user_id]) to only return likes for that user to see
+        # @likes = Like.all
+        # debugger
+        @likes = Like.where(:user_id => params[:userId]) #to only return likes for that user to see
         render :index
     end
 

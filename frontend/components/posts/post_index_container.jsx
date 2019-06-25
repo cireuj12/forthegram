@@ -6,7 +6,8 @@ import { fetchLikes } from '../../actions/like_actions';
 
 const mapStateToProps = state => {
     return {
-        posts: Object.values(state.entities.posts)
+        posts: Object.values(state.entities.posts),
+        fetchuser: state.session.id
         // posts: Object.keys(state.entities.posts).map(id => state.entities.posts[id])
     };
 };
@@ -14,7 +15,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         fetchPosts: () => dispatch(fetchPosts()),
-        fetchLikes: () => dispatch(fetchLikes()),
+        fetchLikes: (userId) => dispatch(fetchLikes(userId)),
         // fetchComments: () => dispatch(fetchComments()),
         openModal: modal => dispatch(openModal(modal)),
         closeModal: () => dispatch(closeModal())
