@@ -42,11 +42,12 @@ export default class PhotoUploadForm extends React.Component {
         if (this.state.photoFile) {
             formData.append('post[photo]', this.state.photoFile);
         }
-        this.props.createPost(formData)//.then(() => dispatch(closeModal()))//.then(() => this.props.history.push('/')) // () => dispatch(closeModal()) test this
-    } //cannot read property push of undefined -- so close modal and reload the main page
+        this.props.createPost(formData).then(() => this.props.closeModal())//.then(() => this.props.history.push('/')) // () => dispatch(closeModal()) test this
+    } //Warning: each Child in list should have unique "key prop"
+    //there is some lag
 
     render() { //this is rendering
-        console.log(this.state);
+        // console.log(this.state);
         console.log(this.props);
         const preview = this.state.photoUrl ? <img className="image-preview" src={this.state.photoUrl}/> : null;
         return (
@@ -61,7 +62,8 @@ export default class PhotoUploadForm extends React.Component {
                     onChange={this.handleFile}/>
                 <div className="image-preview-label">Image Preview</div>
                     {preview}
-                <button className="photo-upload-button">Upload your Post!</button> 
+                <button className="photo-upload-button">
+                    Upload your Post!</button> 
             </form>
             </div>
         )

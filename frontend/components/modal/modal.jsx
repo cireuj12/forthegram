@@ -11,7 +11,7 @@ function Modal({ modal, closeModal }) {
     let component;
     switch (modal) {
         case 'uploadPhotoForm':
-            component = <PhotoUploadFormContainer />;
+            component = <PhotoUploadFormContainer closeModal={closeModal} />;
             break;
         case 'PostMenu':
             component = <PostMenuContainer />;
