@@ -41,6 +41,7 @@ class PostIndexItem extends React.Component {
         //     post_id = '',
         //     body = ''
         // };
+        this.commentButton = this.commentButton.bind(this);
     }
     
     componentDidMount() {
@@ -56,6 +57,12 @@ class PostIndexItem extends React.Component {
     // } 
     
     ///do I need this??
+
+    commentButton() {
+        const input = document.getElementsByClassName("comment-form")[0];
+        debugger
+        input.focus().click();
+    }
 
     render() {
         // console.log(this.props)
@@ -84,9 +91,11 @@ class PostIndexItem extends React.Component {
                                 post={this.props.post}
                                 session={this.props.session_id}
                             />
-                        <img className="comment" src="https://buzzhostingservices.com/images/instagram-comment-icon-1.png"
+                        <img className="comment-button" src="https://buzzhostingservices.com/images/instagram-comment-icon-1.png"
                             title="comment"
-                            alt="comment"></img>
+                            alt="comment"
+                            // onClick={() => {this.commentButton()} }
+                            ></img>
                         <img className="flag" src="https://cdn3.iconfinder.com/data/icons/basic-user-interface-application/32/INSTAGRAM_ICON_SETS-07-512.png"
                             title="flag"
                             alt="flag"></img>

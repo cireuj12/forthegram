@@ -29,7 +29,6 @@ export default class CommentForm extends React.Component {
     }
 
     handleField(field) {
-        // console.log(this.props);
         return e => {
             this.setState({ [field]: e.currentTarget.value })
         }
@@ -42,6 +41,7 @@ export default class CommentForm extends React.Component {
             <div className="comment-form">
                 <form>
                     <textarea 
+                    className="comment-text"
                     name="body"
                     value={this.state.body}
                     onChange={this.handleField('body')}

@@ -17,13 +17,13 @@ export default class HeartForm extends React.Component {
 
         if (!this.liked(likeData.likeable_id,likeData.user_id)) {
             this.props.createLike(likeData)
-            console.log("Liked added to the db") //add it
+            // console.log("Liked added to the db") //add it
         }
         else { //remove it
             const likeId = this.pulllikeId(likeData.likeable_id,likeData.user_id)
             this.props.deleteLike(likeId)
             // console.log(this.pulllikeId(likeData.likeable_id,likeData.user_id))
-            console.log("Like has been removed from db")
+            // console.log("Like has been removed from db")
         }
     }
 
