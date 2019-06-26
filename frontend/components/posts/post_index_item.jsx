@@ -42,6 +42,9 @@ class PostIndexItem extends React.Component {
         //     body = ''
         // };
         this.commentButton = this.commentButton.bind(this);
+        this.input = React.createRef();
+        // a way to reference a specific html element is via this createRef to createa ref.
+        //access specific html element in the node
     }
     
     componentDidMount() {
@@ -55,13 +58,18 @@ class PostIndexItem extends React.Component {
     //         this.props.fetchComments();
     //     }
     // } 
-    
     ///do I need this??
 
     commentButton() {
-        const input = document.getElementsByClassName("comment-form")[0];
-        debugger
-        input.focus().click();
+        // const input = document.getElementsByClassName("comment-text");
+        // console.log(input)
+        // debugger
+        console.log(this.input)
+        this.input.current.focus();
+        //refs on the dom 
+        //a reference to the node becomes referrable. To reference the html element in the node itself
+        // it is stored in .current
+        //Specific elements in the DOM REFS are very useful
     }
 
     render() {
@@ -94,7 +102,7 @@ class PostIndexItem extends React.Component {
                         <img className="comment-button" src="https://buzzhostingservices.com/images/instagram-comment-icon-1.png"
                             title="comment"
                             alt="comment"
-                            // onClick={() => {this.commentButton()} }
+                            onClick={() => {this.commentButton()} }
                             ></img>
                         <img className="flag" src="https://cdn3.iconfinder.com/data/icons/basic-user-interface-application/32/INSTAGRAM_ICON_SETS-07-512.png"
                             title="flag"
@@ -116,7 +124,7 @@ class PostIndexItem extends React.Component {
                                     placeholder="Add a comment..."
                                     id="post-comment"/>
                             </form> */}
-                            <CommentFormContainer postId={this.props.post.id}/>
+                            <CommentFormContainer postId={this.props.post.id} inputRef={this.input} />
                         </div>
                  </div>
 

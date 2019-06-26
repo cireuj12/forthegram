@@ -36,13 +36,16 @@ export default class CommentForm extends React.Component {
 
     render() {
         // debugger
-        const { currentUser, comment } = this.props;
+
+        //input ref attached for a reference to this specific area
+        const { currentUser, comment, inputRef } = this.props;
         return (
             <div className="comment-form">
                 <form>
                     <textarea 
                     className="comment-text"
                     name="body"
+                    ref={inputRef}
                     value={this.state.body}
                     onChange={this.handleField('body')}
                     placeholder="Add a comment..."
