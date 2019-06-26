@@ -73,7 +73,7 @@ export default class HeartForm extends React.Component {
         if (this.liked(this.props.post.id,this.props.session)) {
         return (
             <div className="heart-container">
-                 <img onClick={this.handleCreateLike} className="heart" src="/assets/heart.png"
+                 <img onClick={this.handleCreateLike} className="heart-fill" src="/assets/heart.png"
                          alt="heart"></img>
             </div>
         )} else {

@@ -15,6 +15,7 @@ export default class PhotoUploadForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleFile = this.handleFile.bind(this);
         this.handleInput = this.handleInput.bind(this);
+        this.loading = this.loading.bind(this);
     };
 
 
@@ -32,6 +33,10 @@ export default class PhotoUploadForm extends React.Component {
             fileReader.readAsDataURL(file);
         }
     }//this code is correct
+
+    loading(){
+        this.props.closeModal()
+    }
 
     handleSubmit(e) {
         e.preventDefault();
