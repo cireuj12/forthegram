@@ -42,7 +42,7 @@ class PostIndexItem extends React.Component {
         //     body = ''
         // };
         this.commentButton = this.commentButton.bind(this);
-        this.input = React.createRef();
+        this.enterComment = React.createRef();
         // a way to reference a specific html element is via this createRef to createa ref.
         //access specific html element in the node
     }
@@ -64,8 +64,8 @@ class PostIndexItem extends React.Component {
         // const input = document.getElementsByClassName("comment-text");
         // console.log(input)
         // debugger
-        console.log(this.input)
-        this.input.current.focus();
+        console.log(this.enterComment)
+        this.enterComment.current.focus();
         //refs on the dom 
         //a reference to the node becomes referrable. To reference the html element in the node itself
         // it is stored in .current
@@ -124,7 +124,7 @@ class PostIndexItem extends React.Component {
                                     placeholder="Add a comment..."
                                     id="post-comment"/>
                             </form> */}
-                            <CommentFormContainer postId={this.props.post.id} inputRef={this.input} />
+                            <CommentFormContainer postId={this.props.post.id} inputRef={this.enterComment} />
                         </div>
                  </div>
 
