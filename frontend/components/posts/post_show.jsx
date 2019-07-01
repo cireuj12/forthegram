@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import HeartForm from '../likes/heart';
 import CommentFormContainer from '../comments/comment_form_container';
+import CommentIndexContainer from '../comments/comment_index_container';
 // import PostIndexItem from './post_index_item';
 
 class PostShow extends React.Component {
@@ -61,9 +62,17 @@ class PostShow extends React.Component {
                                     </Link>
                                     {/* </button> */}
                                 </div>
-                                <div className="post-show-caption-box">
-                                    <div className="post-show-caption-username">{this.props.post.username}</div>
-                                    <div className="post-show-caption">{this.props.post.caption}</div>
+                                <div className="post-show-comments">
+                        
+                                    <div className="post-show-caption-box">
+                                        <div className="post-show-caption-username">{this.props.post.username}</div>
+                                        <div className="post-show-caption">{this.props.post.caption}</div>
+                                    </div>
+
+                                    <div className="show-comments-list-box">
+                                        <CommentIndexContainer post={this.props.post}/>
+                                    </div>
+
                                 </div>
                                 <div className="show-comment-form-container">
                                     <div className="post-buttons-container">
