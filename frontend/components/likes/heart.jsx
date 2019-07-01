@@ -70,6 +70,7 @@ export default class HeartForm extends React.Component {
     }
 
     render() {
+        debugger
         if (this.liked(this.props.post.id,this.props.session)) {
         return (
             <div className="heart-container">

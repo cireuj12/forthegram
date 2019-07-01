@@ -7,7 +7,7 @@ import { fetchLikes } from '../../actions/like_actions';
 const mapStateToProps = state => {
     return {
         posts: Object.values(state.entities.posts),
-        fetchuser: state.session.id
+        fetchUser: state.session.id
         // posts: Object.keys(state.entities.posts).map(id => state.entities.posts[id])
     };
 };

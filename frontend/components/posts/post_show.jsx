@@ -1,17 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import HeartForm from '../likes/heart';
+import CommentFormContainer from '../comments/comment_form_container';
 // import PostIndexItem from './post_index_item';
 
 class PostShow extends React.Component {
     // debugger
     constructor(props) {
         super(props);
-        this.handleDelete = this.handleDelete.bind(this)
+        this.handleDelete = this.handleDelete.bind(this);
+        this.commentButton = this.commentButton.bind(this);
+        this.enterComment = React.createRef();
     }
 
     componentDidMount() {
         // debugger
         this.props.fetchPost(this.props.match.params.postId);
+        this.props.fetchLikes(this.props.session_id);
+        // this.props.fetchComments()
     }
  
     // componentDidUpdate(prevProps) { //CHECK IF THIS FIXED 1)
@@ -25,6 +31,10 @@ class PostShow extends React.Component {
     handleDelete(e) {
         e.preventDefault();
         this.props.deletePost(this.props.post.id).then(() => this.props.history.push('/'))
+    }
+
+    commentButton() {
+        this.enterComment.current.focus();
     }
 
     render() {
@@ -55,12 +65,29 @@ class PostShow extends React.Component {
                                     <div className="post-show-caption-username">{this.props.post.username}</div>
                                     <div className="post-show-caption">{this.props.post.caption}</div>
                                 </div>
-                                    <form className="show-comment-form">
-                                        <label htmlFor="post-caption"></label>
-                                        <input type="text"
-                                            placeholder="Add a comment..."
-                                            id="post-comment-show" />
-                                    </form>
+                                <div className="show-comment-form-container">
+                                    <div className="post-buttons-container">
+                                            <HeartForm createLike={this.props.createLike}
+                                                deleteLike={this.props.deleteLike}
+                                                likes={this.props.likes}
+                                                post={this.props.post}
+                                                session={this.props.session_id}
+                                            />
+                                        <img className="comment-button" src="https://buzzhostingservices.com/images/instagram-comment-icon-1.png"
+                                                title="comment"
+                                                alt="comment"
+                                                onClick={() => {this.commentButton()} }
+                                                ></img>
+                                        <img className="flag-show" src="https://cdn3.iconfinder.com/data/icons/basic-user-interface-application/32/INSTAGRAM_ICON_SETS-07-512.png"
+                                                title="flag"
+                                                alt="flag"></img>
+                                    </div>
+                                    <div className="liked-by"></div>
+                                    <div className="date-posted"></div>
+                                    <div className="show-add-comment-container">
+                                        <CommentFormContainer postId={this.props.post.id} inputRef={this.enterComment} />
+                                    </div>
+                                </div>
                             </div>
                     </div>
                     <div className="show-delete">

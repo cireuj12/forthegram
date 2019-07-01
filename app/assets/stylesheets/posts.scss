@@ -359,16 +359,34 @@ textarea {
                     }
                 }
 
-                .show-comment-form {
-                        margin-top: 240px;
-                        align-items: center;
-                        text-align: left;
-                        border-top: 1px solid #efefef;
+                .show-comment-form-container {
+                        margin-top: 150px;
+                        // height: 90px;  
 
-                        #post-comment-show {
-                            margin-top: 15px;
-                            margin-left: 5px;
+                    .post-buttons-container {
+                        background: lightblue;
+                        height: 90px;
+
+                        .flag-show {
+                            width: 25px;
+                            height: 25px;
+                            margin-left: 200px;
+                            margin-top: 5px;
+                            opacity: .60;
                         }
+                    }
+                
+                    .show-comment-form {
+                            // margin-top: 220px;
+                            align-items: center;
+                            text-align: left;
+                            border-top: 1px solid #efefef;
+
+                            #post-comment-show {
+                                margin-top: 15px;
+                                margin-left: 5px;
+                            }
+                    }
                 }
         }
     }
