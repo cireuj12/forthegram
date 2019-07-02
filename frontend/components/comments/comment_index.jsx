@@ -9,7 +9,9 @@ class CommentIndex extends React.Component {
      }
      
     componentDidMount() {
-        this.props.fetchComments();
+        // this.props.fetchComments();
+        this.props.fetchCommentsbyPost(this.props.post.id)
+        //only fetching comments by post
     }
     
     handleDeleteComment(commentId) {

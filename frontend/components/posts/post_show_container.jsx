@@ -23,8 +23,8 @@ const mapDispatchToProps = dispatch => ({
     // make a fetchLikesbyPost based on postId?
     createLike: like => dispatch((createLike(like))),
     deleteLike: (likeId) => dispatch((deleteLike(likeId))),
-    fetchComments: () => dispatch((fetchComments()))
-    // make a fetchCommentsbyPost based on postId
+    fetchComments: () => dispatch((fetchComments())),
+ // make a fetchCommentsbyPost based on postId
 });
 
 export default withRouter(connect(

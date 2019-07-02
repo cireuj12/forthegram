@@ -28,3 +28,10 @@ export const deleteLike = (id) => (
         url: `api/likes/${id}`,
     })
 )
+
+export const fetchCommentsbyPost = (postId) => {
+    return $.ajax({
+        method: 'GET',
+        url: `api/comments`
+    })
+}

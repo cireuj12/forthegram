@@ -16,8 +16,13 @@ class Api::CommentsController < ApplicationController
     end  
 
     def index 
-        @comments = Comment.all 
-        render :index
+        if params[:postId] 
+            @comments = Comment.where(:post_id => params[:postId])
+            render :index 
+        else 
+            @comments = Comment.all 
+            render :index
+        end
     end 
 
     def destroy

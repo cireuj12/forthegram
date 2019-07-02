@@ -8,13 +8,18 @@ export const REMOVE_COMMENT = "REMOVE_COMMENT";
 
 
 export const fetchComments = () => dispatch => (
-    CommentApiUtil.fetchComments().then(comment => dispatch(receiveAllComments(comment)))
+    CommentApiUtil.fetchComments().then(comments => dispatch(receiveAllComments(comments)))
 );
 
 // export const createComment = comment => dispatch => (
 //     CommentApiUtil.createComment(comment).then(comment => dispatch(receiveComment(comment)))
 // );
 //write to debug:
+
+export const fetchCommentsbyPost = postId => dispatch => (
+    CommentApiUtil.fetchCommentsbyPost(postId)
+        .then(comments => dispatch(receiveAllComments(comments)))
+);
 
 export const createComment = comment => {
     return (dispatch) => {
@@ -28,6 +33,7 @@ export const createComment = comment => {
 export const deleteComment = commentId => dispatch => (
     CommentApiUtil.deleteComment(commentId).then(comment => dispatch(removeComment(commentId)))
 );
+
 
 const receiveAllComments = comments => {
     return {

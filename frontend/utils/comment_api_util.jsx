@@ -21,6 +21,14 @@ export const deleteComment = (id) => (
     })
 )
 
+export const fetchCommentsbyPost = (postId) => {
+    return $.ajax({
+        method: 'GET',
+        url: `api/comments`,
+        data: {postId}
+    })
+}
+
 // export const updateComment = (post, comment) => (
 //     $.ajax({
 //         method: 'PATCH',

@@ -23,6 +23,7 @@ class Api::LikesController < ApplicationController
         # @likes = Like.all
         # debugger
         @likes = Like.where(:user_id => params[:userId]) #to only return likes for that user to see
+        # for the like counter I will need to return for all users
         render :index
     end
 
