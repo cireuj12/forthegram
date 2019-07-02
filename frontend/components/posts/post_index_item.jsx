@@ -115,7 +115,7 @@ class PostIndexItem extends React.Component {
                             <div className="initial-caption-caption">{this.props.post.caption}</div>
                         </div>
                         <div className="comments-list-box">
-                            <CommentIndexContainer post={this.props.post}/>
+                            <CommentIndexContainer post={this.props.post} session_id={this.props.session_id}/>
                         </div>
                         <div className="comment-add-form-container">
                             {/*<form className="comment-form">

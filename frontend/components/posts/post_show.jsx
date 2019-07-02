@@ -12,6 +12,7 @@ class PostShow extends React.Component {
         this.handleDelete = this.handleDelete.bind(this);
         this.commentButton = this.commentButton.bind(this);
         this.enterComment = React.createRef();
+        this.isLoggedIn = this.isLoggedIn.bind(this);
     }
 
     componentDidMount() {
@@ -29,6 +30,14 @@ class PostShow extends React.Component {
     // }
         //need to fix this; does not work when refreshing
 
+    isLoggedIn(post) {
+            if (post.author_id === this.props.session_id) {
+                return (
+                <button onClick={this.handleDelete}>Delete this Post</button>
+                )
+            }
+        }
+    
     handleDelete(e) {
         e.preventDefault();
         this.props.deletePost(this.props.post.id).then(() => this.props.history.push('/'))
@@ -100,7 +109,7 @@ class PostShow extends React.Component {
                             </div>
                     </div>
                     <div className="show-delete">
-                    <button onClick={this.handleDelete}>Delete this Post</button>
+                        {this.isLoggedIn(post)}
                     </div>
             </div>
         );
