@@ -16,6 +16,10 @@ export const fetchLikes = (userId) => dispatch => (
     LikeApiUtil.fetchLikes(userId).then(likes => dispatch(receiveAllLikes(likes)))
 )
 
+export const fetchLikesbyPost = (postId) => dispatch => (
+    LikeApiUtil.fetchLikesbyPost(postId).then(likes => dispatch(recieveAllLikes(likes)))
+)
+
 const receiveLike = (like) => {
     return {
         type: RECEIVE_LIKE,

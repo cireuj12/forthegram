@@ -60,8 +60,8 @@ export default class HeartForm extends React.Component {
         //of course includes [1,2] includes [2] and [1,2,3] includes [2]
 
         if (likeable_array.includes(likeable) && user_array.includes(user)) {
-            // this only works because im only fetching comments for this specific user, but this wont work for a counter
-            // ill need too do a separate fetchcomments or refactor this and filter here
+            // this only works because im only fetching likes for this specific user, but this wont work for a counter
+            // ill need too do a separate fetchlikes or refactor this and filter here
             return true
         } else {
             return false 

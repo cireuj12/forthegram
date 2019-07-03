@@ -22,9 +22,17 @@ class Api::LikesController < ApplicationController
     def index 
         # @likes = Like.all
         # debugger
-        @likes = Like.where(:user_id => params[:userId]) #to only return likes for that user to see
+        if params[:postId] # get likes by post
+            @likes = Like.where(:likeable_id => params[:postId])
+            render :index
+        elsif params[:userId] # get likes by User
+            @likes = Like.where(:user_id => params[:userId]) #to only return likes for that user to see
         # for the like counter I will need to return for all users
-        render :index
+            render :index
+        else  # for some reason get the rest of the likes
+            @likes = Like.all 
+            render :index 
+        end
     end
 
     def destroy

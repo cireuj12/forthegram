@@ -15,6 +15,14 @@ export const fetchLikes = (userId) => {
     })
 }
 
+export const fetchLikesbyPost = (postId) => {
+    return $.ajax({
+        method: 'GET',
+        url: `api/likes`,
+        data: {postId}
+    })
+}
+
 export const fetchLike = (id) => {
     return $.ajax({
         method: 'GET',
