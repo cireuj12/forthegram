@@ -63,7 +63,7 @@ textarea {
 .post-index-item {
     margin-top: 100px;
     width: 610px;
-    height: 800px;
+    height: 825px;
     background-color: inherit;
     margin-bottom: 60px;
     border-radius: 3px;
@@ -75,6 +75,18 @@ textarea {
 
 .post-index-container {
     width: inherit;
+
+    .like-counter-box {
+        width: inherit;
+        // border-top: 1px solid #e6e6e6;
+        height: 16.5px;
+
+        .like-counter {
+            font-weight: 600;
+            color: #262626;
+            margin-left: 11px;
+        }
+    }
 }
 
 .post-user-header {
@@ -181,7 +193,7 @@ textarea {
     width: inherit;
     height: 160px;
     background-color: inherit;
-    border-top: 1px solid #e6e6e6;
+    // border-top: 1px solid #e6e6e6;
     // padding-bottom: 10px;
     position: relative;
 
@@ -280,10 +292,6 @@ textarea {
     }
 }
 
-.like-counter {
-    width: inherit;
-    
-}
 
 .post-show-page {
     display: flex;

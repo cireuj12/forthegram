@@ -4,8 +4,9 @@ import { connect } from 'react-redux';
 import { createComment, fetchComments } from '../../actions/comment_actions';
 import CommentFormContainer from '../comments/comment_form_container';
 import CommentIndexContainer from '../comments/comment_index_container';
-import { createLike, deleteLike, fetchLikesbyPost, fetchLikesbyUser } from '../../actions/like_actions';
+import { createLike, deleteLike } from '../../actions/like_actions';
 import HeartForm from '../likes/heart';
+import LikeCounter from '../likes/like_counter';
 
 //map and mount the modal in this container and then start testing it
 
@@ -28,7 +29,8 @@ const mapDispatchtoProps = dispatch => {
         fetchComments: () => dispatch((fetchComments())),
         createLike: like => dispatch((createLike(like))),
         deleteLike: (likeId) => dispatch((deleteLike(likeId))),
-        fetchLikesbyUser: (userId) => dispatch((fetchLikesbyUser(userId)))
+        fetchLikesbyUser: (userId) => dispatch((fetchLikesbyUser(userId))),
+        fetchLikesbyPost: (postId) => dispatch((fetchLikesbyPost(postId)))
     };
 };
 //fetch likes by post does not work.
@@ -50,7 +52,11 @@ class PostIndexItem extends React.Component {
     componentDidMount() {
         // debugger
         this.props.fetchComments();
-        this.props.fetchLikesbyUser(this.props.session_id)
+        // this.props.fetchLikesbyUser(this.props.session_id) 
+
+        // Calling this twice in the index page changes the state 2x
+
+        // this.props.fetchLikesbyPost(this.props.post.id)
     }
 
     // componentDidUpdate(prevProps) { 
@@ -71,6 +77,10 @@ class PostIndexItem extends React.Component {
         //a reference to the node becomes referrable. To reference the html element in the node itself
         // it is stored in .current
         //Specific elements in the DOM REFS are very useful
+    }
+
+    countLikes() {
+
     }
 
     render() {
@@ -109,7 +119,7 @@ class PostIndexItem extends React.Component {
                             title="flag"
                             alt="flag"></img>
                     </div>
-                    <div className="like-counter"></div>
+                        <LikeCounter likes={this.props.likes} post ={this.props.post} />
                     <div className="comments-container">
                         <div className="initial-caption">
                             <div className="initial-caption-username">{this.props.username}</div>

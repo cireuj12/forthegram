@@ -27,7 +27,7 @@ export default class HeartForm extends React.Component {
         }
     }
 
-    pulllikeId(likeable_input, user_input) { //pulls likeId based on the two foreign keys - really hacky
+    pulllikeId(likeable_input, user_input) { //pulls likeId based on the two foreign keys - really hacky to delete the like
         var likes_object = this.props.likes
         if (Object.keys(likes_object).length !== 0 && likes_object.constructor === Object) {
             const likeable_array_iterate = Object.values(likes_object)
@@ -41,7 +41,6 @@ export default class HeartForm extends React.Component {
         }
     }
     //Checking if this photo is already liked by the user that is loggged in
-    //So Like should now show if user is not in
     //Separate like counter for a different user needs to be implemented
     //Array of likes - how many have this post_id
     liked(likeable, user) {
@@ -51,23 +50,26 @@ export default class HeartForm extends React.Component {
         if (Object.keys(likes_object).length !== 0 && likes_object.constructor === Object) {
             const likeable_array_iterate = Object.values(likes_object)
             for (let i = 0; i < likeable_array_iterate.length; i++) {
+                if (likeable_array_iterate[i].user_id === user) { // only if the user id of the like - this is the filter
                 likeable_array.push(likeable_array_iterate[i].likeable_id)
                 user_array.push(likeable_array_iterate[i].user_id)
+                }
             }
         }
         //[1,2,3]
         //[1,2]
         //of course includes [1,2] includes [2] and [1,2,3] includes [2]
 
-        if (likeable_array.includes(likeable) && user_array.includes(user)) {
-            // this only works because im only fetching likes for this specific user, but this wont work for a counter
-            // ill need too do a separate fetchlikes or refactor this and filter here
+        //If likeable_array filtered based on the user_id as well - includes the post_id then return true
+        if (likeable_array.includes(likeable)) {
             return true
         } else {
             return false 
         }
 
     }
+    // in the array of likes I will make only if the user id == current user session id
+
 
     render() {
         // debugger
