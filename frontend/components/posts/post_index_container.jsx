@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import PostIndex from './post_index';
 import { fetchPosts } from '../../actions/post_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
-import { fetchLikes } from '../../actions/like_actions';
+import { fetchLikesbyUser } from '../../actions/like_actions';
 
 const mapStateToProps = state => {
     return {
@@ -15,7 +15,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         fetchPosts: () => dispatch(fetchPosts()),
-        fetchLikes: (userId) => dispatch(fetchLikes(userId)),
+        fetchLikesbyUser: (userId) => dispatch(fetchLikesbyUser(userId)),
         // fetchComments: () => dispatch(fetchComments()),
         openModal: modal => dispatch(openModal(modal)),
         closeModal: () => dispatch(closeModal())

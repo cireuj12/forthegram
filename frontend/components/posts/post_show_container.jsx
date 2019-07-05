@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom'
 import PostShow from './post_show';
 import { fetchPost, deletePost } from '../../actions/post_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
-import { fetchLikes, deleteLike, createLike } from '../../actions/like_actions';
+import { fetchLikesbyPost, deleteLike, createLike } from '../../actions/like_actions';
 import { fetchComments } from '../../actions/comment_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -19,7 +19,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => ({
     fetchPost: id => dispatch(fetchPost(id)),
     deletePost: id => dispatch(deletePost(id)),
-    fetchLikes: (userId) => dispatch(fetchLikes(userId)),
+    fetchLikesbyPost: (postId) => dispatch(fetchLikesbyPost(postId)),
     // make a fetchLikesbyPost based on postId?
     createLike: like => dispatch((createLike(like))),
     deleteLike: (likeId) => dispatch((deleteLike(likeId))),

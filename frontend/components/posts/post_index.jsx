@@ -13,7 +13,8 @@ class PostIndex extends React.Component {
     componentDidMount() {
         this.props.fetchPosts();
         // debugger
-        this.props.fetchLikes(this.props.fetchUser)
+        // this.props.fetchLikes(this.props.fetchUser) 
+        // ^ this is no longer neccesary
     }
 
     componentDidUpdate(prevProps) { //CHECK IF THIS FIXED 1)

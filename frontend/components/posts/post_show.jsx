@@ -18,7 +18,7 @@ class PostShow extends React.Component {
     componentDidMount() {
         // debugger
         this.props.fetchPost(this.props.match.params.postId);
-        this.props.fetchLikes(this.props.session_id);
+        this.props.fetchLikesbyPost(this.props.match.params.postId);
         // this.props.fetchComments()
     }
  

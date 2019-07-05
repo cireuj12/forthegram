@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { openModal, closeModal } from '../../actions/modal_actions'
 import { createComment, fetchComments } from '../../actions/comment_actions';
 import CommentFormContainer from '../comments/comment_form_container';
 import CommentIndexContainer from '../comments/comment_index_container';
-import { createLike, deleteLike } from '../../actions/like_actions';
+import { createLike, deleteLike, fetchLikesbyPost, fetchLikesbyUser } from '../../actions/like_actions';
 import HeartForm from '../likes/heart';
 
 //map and mount the modal in this container and then start testing it
@@ -28,10 +27,11 @@ const mapDispatchtoProps = dispatch => {
         createComment: comment => dispatch((createComment(comment))),
         fetchComments: () => dispatch((fetchComments())),
         createLike: like => dispatch((createLike(like))),
-        deleteLike: (likeId) => dispatch((deleteLike(likeId)))
+        deleteLike: (likeId) => dispatch((deleteLike(likeId))),
+        fetchLikesbyUser: (userId) => dispatch((fetchLikesbyUser(userId)))
     };
 };
-
+//fetch likes by post does not work.
 class PostIndexItem extends React.Component {
 
     constructor(props) {
@@ -50,6 +50,7 @@ class PostIndexItem extends React.Component {
     componentDidMount() {
         // debugger
         this.props.fetchComments();
+        this.props.fetchLikesbyUser(this.props.session_id)
     }
 
     // componentDidUpdate(prevProps) { 

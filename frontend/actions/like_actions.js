@@ -12,13 +12,18 @@ export const deleteLike = likeId => dispatch => (
     LikeApiUtil.deleteLike(likeId).then(like => dispatch(removeLike(likeId)))
 )
 
-export const fetchLikes = (userId) => dispatch => (
-    LikeApiUtil.fetchLikes(userId).then(likes => dispatch(receiveAllLikes(likes)))
+export const fetchLikesbyUser = (userId) => dispatch => (
+    LikeApiUtil.fetchLikesbyUser(userId).then(likes => dispatch(receiveAllLikes(likes)))
 )
 
-export const fetchLikesbyPost = (postId) => dispatch => (
-    LikeApiUtil.fetchLikesbyPost(postId).then(likes => dispatch(recieveAllLikes(likes)))
-)
+export const fetchLikesbyPost = (postId) =>  {
+    return (dispatch) => {
+        return LikeApiUtil.fetchLikesbyPost(postId).then((promiseobj) => {
+            // debugger
+            return dispatch(receiveAllLikes(promiseobj))
+        })
+    }
+}
 
 const receiveLike = (like) => {
     return {
