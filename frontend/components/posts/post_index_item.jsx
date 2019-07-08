@@ -89,8 +89,11 @@ class PostIndexItem extends React.Component {
         <li className="post-index-item">
             <div className= "post-index-container">
                     <h2 className="post-user-header">
-                    <img className="stock-user" src="https://fntarizona.com/wp-content/uploads/2017/05/shutterstock_624472886.jpg" 
-                        title="instagram-user"></img>
+                        <Link to="/test">
+                            <img className="stock-user" src="https://fntarizona.com/wp-content/uploads/2017/05/shutterstock_624472886.jpg" 
+                                title="instagram-user">
+                            </img>
+                        </Link>
                         <div className="post-username">{this.props.username}</div>
                         <div className="post-three-dots-container"> 
                         {/* <button className="navBar-addphoto" onClick={() => this.props.openModal('PostMenu')}> */}

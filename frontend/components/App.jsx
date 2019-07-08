@@ -12,7 +12,8 @@ import LogInFormContainer from './user_form/login_form_container';
 import { AuthRoute, ProtectedRoute } from '../utils/route_util';
 import SplashContainer from './splash/splash_container';
 import Modal from './modal/modal';
-import PostShowContainer from './posts/post_show_container'
+import PostShowContainer from './posts/post_show_container';
+import UserProfile from '../components/profile/user_profile';
 
 
 const App = () => (
@@ -27,6 +28,7 @@ const App = () => (
             {/* <GreetingContainer /> */}
             <Route exact path='/' component={SplashContainer} />
             <Route exact path='/posts' component={SplashContainer} /> {/* is this neccesary */}
+            <Route path="/test" component={UserProfile}/>
             <AuthRoute /*exact*/ path="/login" component={LogInFormContainer} />
             <AuthRoute /*exact*/ path="/signup" component={SplashContainer} />
             {/* <AuthRoute path="/posts/:postId" component={PostShowContainer} /> */}
