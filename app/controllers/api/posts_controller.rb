@@ -14,8 +14,14 @@ class Api::PostsController < ApplicationController
     end 
 
     def index #is this even being used?
-        @posts = Post.all.with_attached_photo #with_attached_photo prevents a n+1 query.
-        render :index #optional? render @posts?
+        if params[:userId]
+            @posts = Post.where(:author_id => params[:userId]).with_attached_photo
+            render :index
+        else
+            @posts = Post.all.with_attached_photo #with_attached_photo prevents a n+1 query.
+            render :index #optional? render @posts?
+        end
+
     end
 
     def show 

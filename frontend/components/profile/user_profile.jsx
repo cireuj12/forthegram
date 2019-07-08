@@ -1,19 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom'
-import { fetchUser } from '../../actions/user_actions'
+import { withRouter } from 'react-router-dom';
+import { fetchUser } from '../../actions/user_actions';
+import { fetchPostsbyUser } from '../../actions/post_actions';
 
 const mapStateToProps = (state, ownProps) => {
     // debugger
     return {
         user: state.entities.users[ownProps.match.params.userId],
+        posts: Object.values(state.entities.posts)
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
         fetchUser: userId => dispatch(fetchUser(userId)),
-
+        fetchPostsbyUser: userId => dispatch(fetchPostsbyUser(userId))
         //fetch posts by userId
     }
 }
@@ -25,11 +27,25 @@ class UserProfile extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchUser(this.props.match.params.userId)
+        this.props.fetchUser(this.props.match.params.userId);
+        this.props.fetchPostsbyUser(this.props.match.params.userId);
+        // debugger
     }
 
     render() {
-        console.log(this.props.user.username);
+        console.log(this.props)
+        // debugger
+        const posts = this.props.posts.map(post => {
+            if (this.props.user.id === post.author_id) {
+                return (
+                    <div key={post.id} className="img-div">
+                        <img src={post.photoUrl}>
+                        </img>
+                    </div>
+                )
+            }
+        })
+
         return (
             <div className="user-profile">
 
@@ -56,14 +72,19 @@ class UserProfile extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div>
-                <span>
-                    Two components will be rendered
-                    <br></br>
-                    The user profile top box
-                    <br></br>
-                    An Index of posts
-                </span>
+                <div className="profile-posts-index-container">
+                    <div className="profile-posts-index">
+                        <ul class="ul-post-index">
+                            {posts}
+                        </ul>
+                    <span>
+                        Two components will be rendered
+                        <br></br>
+                        The user profile top box
+                        <br></br>
+                        An Index of posts
+                    </span>
+                    </div>
                 </div>
             </div>
         )

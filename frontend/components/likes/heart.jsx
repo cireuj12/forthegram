@@ -70,7 +70,7 @@ export default class HeartForm extends React.Component {
     }
     // in the array of likes I will make only if the user id == current user session id
 
-
+    //is user_array neccesary
     render() {
         // debugger
         if (this.liked(this.props.post.id,this.props.session)) {
