@@ -89,7 +89,7 @@ class PostIndexItem extends React.Component {
         <li className="post-index-item">
             <div className= "post-index-container">
                     <h2 className="post-user-header">
-                        <Link to="/test">
+                        <Link to={`/users/${this.props.post.author_id}`}>
                             <img className="stock-user" src="https://fntarizona.com/wp-content/uploads/2017/05/shutterstock_624472886.jpg" 
                                 title="instagram-user">
                             </img>
