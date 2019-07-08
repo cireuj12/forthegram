@@ -1,7 +1,7 @@
 
 .overall-div {
     padding-top: 60px;
-    margin-top: 60px;
+    // margin-top: 60px;
     width: 935px;
     height: 100%;
 
@@ -13,10 +13,36 @@
         width: 100px;
         height: calc(100% - 300px);
 
-        .profiles-box {
-            height: 30%;
+        .splash-profile-box {
+            height: 50px;
             //photo give it a small size and display in-line block
             //and the other two divs next to each other
+            display: flex;
+            flex-direction: row;
+            width: 293px;
+
+            .splash-profile-photo {
+                height: 50px;
+                width: 50px;
+                background-color: inherit;
+                border-radius: 50%;
+            }
+
+            .splash-profile-names {
+                margin-top: 5px;
+                font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+
+                .splash-profile-username {
+                    font-weight: 600;
+                    font-size: 14px;
+                    color: #262626;
+                }
+
+                .splash-profile-fullname {
+                    font-size: 12px;
+                    color: #999999;
+                }
+            }
         }
 
         .stories-box {

@@ -63,8 +63,16 @@ const splash = ({ currentUser, logout }) => {
         <div className="overall-div">
             <PostIndexContainer />
                 <div className="right-side-container">
-                    <div className="profiles-box">
-                        <div></div>
+                    <div className="splash-profile-box">
+                        <div className="splash-profile-photo">
+                            <img src="/assets/userig.png">
+                            </img>
+                        </div>
+                        <div className="splash-profile-names">
+                            <span className="splash-profile-username">{currentUser.username}</span>
+                            <br></br>
+                            <span className="splash-profile-fullname">{currentUser.fullname}</span>
+                        </div>
                     </div>
                     <div className="stories-box">
                         <div></div>
