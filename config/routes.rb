@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :posts, except: [:new, :edit]  #destroy create update show index
     resources :comments, only: [:create, :index, :destroy] #need to add destroy and update
     resources :likes, only: [:create, :show, :destroy, :index]
+    resources :follows, only: [:create, :destroy, :index]
   end
 
   # resources :posts, only: :show

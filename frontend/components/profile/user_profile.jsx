@@ -3,19 +3,23 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { fetchUser } from '../../actions/user_actions';
 import { fetchPostsbyUser } from '../../actions/post_actions';
+import { fetchFollows } from '../../actions/follow_actions';
+import FollowButton from '../follows/follow_button';
 
 const mapStateToProps = (state, ownProps) => {
     // debugger
     return {
         user: state.entities.users[ownProps.match.params.userId],
-        posts: Object.values(state.entities.posts)
+        posts: Object.values(state.entities.posts),
+        follows: Object.values(state.entities.follows)
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
         fetchUser: userId => dispatch(fetchUser(userId)),
-        fetchPostsbyUser: userId => dispatch(fetchPostsbyUser(userId))
+        fetchPostsbyUser: userId => dispatch(fetchPostsbyUser(userId)),
+        fetchFollows: userId => dispatch(fetchFollows(userId)),
         //fetch posts by userId
     }
 }
@@ -32,6 +36,7 @@ class UserProfile extends React.Component {
     componentDidMount() {
         this.props.fetchUser(this.props.match.params.userId);
         this.props.fetchPostsbyUser(this.props.match.params.userId);
+        this.props.fetchFollows(this.props.match.params.userId);
         // debugger
     }
 
@@ -39,6 +44,7 @@ class UserProfile extends React.Component {
         if (prevProps.user && (prevProps.user.id != this.props.match.params.userId)) {
             this.props.fetchUser(this.props.match.params.userId);
             this.props.fetchPostsbyUser(this.props.match.params.userId);
+            this.props.fetchFollows(this.props.match.params.userId);
         }
     }
 
@@ -107,10 +113,7 @@ class UserProfile extends React.Component {
                             <div className="profile-username">
                                 {this.props.user.username}
                             </div>
-
-                            <div>
-                                <button className="follow-button">Follow</button>
-                            </div>
+                            <FollowButton />
                         </div>
 
                         <div className="profile-box-counters">

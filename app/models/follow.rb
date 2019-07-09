@@ -13,6 +13,8 @@ class Follow < ApplicationRecord
     belongs_to :follower,
         primary_key: :id,
         foreign_key: :follower_id,
-        class_name: :Follow
+        class_name: :User
+    
+    #following is all the follows where follower_id == user_id
 
 end
