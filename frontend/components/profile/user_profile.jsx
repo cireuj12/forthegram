@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { fetchUser } from '../../actions/user_actions';
 import { fetchPostsbyUser } from '../../actions/post_actions';
 import { fetchFollows } from '../../actions/follow_actions';
-import FollowButton from '../follows/follow_button';
+import FollowButtonContainer from '../follows/follow_button_container';
 
 const mapStateToProps = (state, ownProps) => {
     // debugger
@@ -67,9 +67,10 @@ class UserProfile extends React.Component {
     }
 
     countFollowers() {
+        const follow = this.props.follows.length
         return (
             <div>
-                followers
+               {follow} followers
             </div>
         )
     }
@@ -83,7 +84,7 @@ class UserProfile extends React.Component {
     }
     
     render() {
-        console.log(this.props)
+        // console.log(this.props)
         // debugger
         if (!this.props.user) return null; // this fixed fails to load
 
@@ -113,7 +114,8 @@ class UserProfile extends React.Component {
                             <div className="profile-username">
                                 {this.props.user.username}
                             </div>
-                            <FollowButton />
+                            <FollowButtonContainer user={this.props.user}
+                            follows={this.props.follows} />
                         </div>
 
                         <div className="profile-box-counters">
@@ -141,7 +143,7 @@ class UserProfile extends React.Component {
                 </div>
                 <div className="profile-posts-index-container">
                     <div className="profile-posts-index">
-                        <ul class="ul-post-index">
+                        <ul className="ul-post-index">
                             {posts}
                         </ul>
                     </div>
