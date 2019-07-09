@@ -23,7 +23,10 @@ const mapDispatchToProps = dispatch => {
 class UserProfile extends React.Component {
 
     constructor(props) {
-        super(props)
+        super(props);
+        this.countPosts = this.countPosts.bind(this);
+        this.countFollowers = this.countFollowers.bind(this);
+        this.countFollowing = this.countFollowing.bind(this);
     }
 
     componentDidMount() {
@@ -37,6 +40,40 @@ class UserProfile extends React.Component {
             this.props.fetchUser(this.props.match.params.userId);
             this.props.fetchPostsbyUser(this.props.match.params.userId);
         }
+    }
+
+    countPosts() {
+        const count = this.props.posts.length
+        if (count === 1) {
+            return (
+                <div>
+                    {count} post
+                </div>
+            )
+        } else if (count !== 0) {
+            return (
+                <div>
+                    {count} posts
+                </div>
+            )
+        }
+        
+    }
+
+    countFollowers() {
+        return (
+            <div>
+                followers
+            </div>
+        )
+    }
+
+    countFollowing() {
+        return (
+            <div>
+                following
+            </div>
+        )
     }
     
     render() {
@@ -60,7 +97,9 @@ class UserProfile extends React.Component {
 
                 <div className="profile-header-container">
                     <div className="profile-picture-container">
-                        photo here
+                        <img className="profile-photo" src="/assets/userig.png">
+
+                        </img>
                     </div>
 
                      <div className="profile-box">
@@ -68,16 +107,32 @@ class UserProfile extends React.Component {
                             <div className="profile-username">
                                 {this.props.user.username}
                             </div>
+
+                            <div>
+                                <button className="follow-button">Follow</button>
+                            </div>
                         </div>
 
                         <div className="profile-box-counters">
-                            <div></div>
-                            <div></div>
-                            <div></div>
+                            <div className="profile-posts-counter">
+                                {this.countPosts()}
+                            </div>
+                            <div className="profile-followers-counter">
+                                {this.countFollowers()}
+                            </div>
+                            <div className="profile-following-counter">
+                                {this.countFollowing()}
+                            </div>
                         </div>
 
                         <div className="profile-box-info">
+                            <div className="profile-box-fullname">
+                                {this.props.user.fullname}
+                            </div>
+                        </div>
 
+                        <div className="profile-followed-by">
+                            <span>Followed by</span>
                         </div>
                     </div>
                 </div>
@@ -86,15 +141,9 @@ class UserProfile extends React.Component {
                         <ul class="ul-post-index">
                             {posts}
                         </ul>
-                    <span>
-                        Two components will be rendered
-                        <br></br>
-                        The user profile top box
-                        <br></br>
-                        An Index of posts
-                    </span>
                     </div>
                 </div>
+
             </div>
         )
     }
