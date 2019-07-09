@@ -32,9 +32,18 @@ class UserProfile extends React.Component {
         // debugger
     }
 
+   componentDidUpdate(prevProps) { 
+        if (prevProps.user && (prevProps.user.id != this.props.match.params.userId)) {
+            this.props.fetchUser(this.props.match.params.userId);
+            this.props.fetchPostsbyUser(this.props.match.params.userId);
+        }
+    }
+    
     render() {
         console.log(this.props)
         // debugger
+        if (!this.props.user) return null; // this fixed fails to load
+
         const posts = this.props.posts.map(post => {
             if (this.props.user.id === post.author_id) {
                 return (
