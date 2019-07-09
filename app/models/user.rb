@@ -25,9 +25,14 @@ class User < ApplicationRecord
         foreign_key: :author_id,
         class_name: :Post
 
-    has_many :follows,
+    has_many :followers,
         primary_key: :id,
         foreign_key: :follower_id,
+        class_name: :Follow
+    
+    has_many :follows,
+        primary_key: :id,
+        foreign_key: :following_id,
         class_name: :Follow
 
     has_many :comments
