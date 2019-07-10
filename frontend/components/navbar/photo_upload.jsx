@@ -16,6 +16,7 @@ export default class PhotoUploadForm extends React.Component {
         this.handleFile = this.handleFile.bind(this);
         this.handleInput = this.handleInput.bind(this);
         this.loading = this.loading.bind(this);
+        // this.renderLoad = this.renderLoad.bind(this);
     };
 
 
@@ -38,8 +39,18 @@ export default class PhotoUploadForm extends React.Component {
         this.props.closeModal()
     }
 
+    // renderLoad() {
+    //     var elem = document.getElementById("uploadButton")
+    //     elem.value = "Uploading...Please wait"
+    // }
+
     handleSubmit(e) {
         e.preventDefault();
+
+        var elem = document.getElementById("uploadButton")
+        elem.value = "Uploading...Please wait"
+        elem.disabled = true;
+
         const formData = new FormData();
         formData.append('post[caption]', this.state.caption);
         formData.append('post[author_id]', this.state.author_id);
@@ -67,8 +78,13 @@ export default class PhotoUploadForm extends React.Component {
                     onChange={this.handleFile}/>
                 <div className="image-preview-label">Image Preview</div>
                     {preview}
-                <button className="photo-upload-button">
-                    Upload your Post!</button> 
+                <input id="uploadButton" 
+                       type="submit"
+                       className="photo-upload-button" 
+                       value="Upload your Post!"
+                    //    onClick={this.renderLoad}
+                       >
+                    </input> 
             </form>
             </div>
         )
