@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import HeartForm from '../likes/heart';
 import CommentFormContainer from '../comments/comment_form_container';
 import CommentIndexContainer from '../comments/comment_index_container';
+import LikeCounter from '../likes/like_counter'
 // import PostIndexItem from './post_index_item';
 
 class PostShow extends React.Component {
@@ -106,7 +107,8 @@ class PostShow extends React.Component {
                                                 title="flag"
                                                 alt="flag"></img>
                                     </div>
-                                    <div className="liked-by"></div>
+                                    {/* <div className="liked-by"></div> */}
+                                    <LikeCounter likes={this.props.likes} post ={this.props.post} />
                                     <div className="date-posted"></div>
                                     <div className="show-add-comment-container">
                                         <CommentFormContainer postId={this.props.post.id} inputRef={this.enterComment} />
