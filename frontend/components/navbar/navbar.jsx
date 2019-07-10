@@ -30,11 +30,12 @@ const NavBar = ({ currentUser, openModal, logout }) => (
                             title="upload"
                             alt ="upload1"></img>
                     </button>
-                    <a href="userprofile" className="navBar-user">
+                    <Link to={`/users/${currentUser.id}`} className="navBar-user">
                         <img src="https://cdn3.iconfinder.com/data/icons/basic-user-interface-application/32/INSTAGRAM_ICON_SETS-12-512.png"
                             title="logout"
                             alt="logout1"></img>
-                    </a>
+                
+                    </Link>
                     <button className="navBar-logout" onClick={logout} value="logout">Log Out</button>
 
                 </div>
