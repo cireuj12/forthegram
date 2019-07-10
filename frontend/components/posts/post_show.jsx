@@ -85,7 +85,7 @@ class PostShow extends React.Component {
                                     </div>
 
                                     <div className="show-comments-list-box">
-                                        <CommentIndexContainer post={this.props.post}/>
+                                        <CommentIndexContainer post={this.props.post} session_id={this.props.session_id}/>
                                     </div>
 
                                 </div>

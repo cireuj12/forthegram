@@ -17,6 +17,7 @@ class Api::UsersController < ApplicationController
 
     def show 
         @user = User.find(params[:id])
+        # .or(User.where(:username => params[:id]))
         render :show #optional?
     end
 
