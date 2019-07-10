@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { fetchUser } from '../../actions/user_actions';
@@ -56,7 +57,7 @@ class UserProfile extends React.Component {
                     {count} post
                 </div>
             )
-        } else if (count !== 0) {
+        } else if (count !== 1) {
             return (
                 <div>
                     {count} posts
@@ -67,18 +68,38 @@ class UserProfile extends React.Component {
     }
 
     countFollowers() {
-        const follow = this.props.follows.length
+        // console.log(this.props.follows)
+        const follow_array_iterate = this.props.follows
+        const followers_array = []
+        for (let i = 0; i < follow_array_iterate.length; i++) {
+            if (follow_array_iterate[i].following_id === parseInt(this.props.match.params.userId)) {
+                followers_array.push(follow_array_iterate[i].following_id)
+            }
+        }
+        
+        const followers = followers_array.length
+        // debugger
         return (
             <div>
-               {follow} followers
+               {followers} followers
             </div>
         )
     }
 
     countFollowing() {
+
+        const follow_array_iterate = this.props.follows
+        const following_array = []
+        for (let i = 0; i < follow_array_iterate.length; i++) {
+            if (follow_array_iterate[i].follower_id === parseInt(this.props.match.params.userId)) {
+                following_array.push(follow_array_iterate[i].follower_id)
+            }
+        }
+        
+        const following = following_array.length
         return (
             <div>
-                following
+                {following} following
             </div>
         )
     }
@@ -92,8 +113,10 @@ class UserProfile extends React.Component {
             if (this.props.user.id === post.author_id) {
                 return (
                     <div key={post.id} className="img-div">
+                        <Link to={`/posts/${post.id}`}>
                         <img src={post.photoUrl}>
                         </img>
+                        </Link>
                     </div>
                 )
             }

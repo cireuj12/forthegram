@@ -65,11 +65,15 @@ const splash = ({ currentUser, logout }) => {
                 <div className="right-side-container">
                     <div className="splash-profile-box">
                         <div className="splash-profile-photo">
-                            <img src="/assets/userig.png">
-                            </img>
+                            <Link to={`/users/${currentUser.id}`}>
+                                <img src="/assets/userig.png">
+                                </img>
+                            </Link>
                         </div>
                         <div className="splash-profile-names">
-                            <span className="splash-profile-username">{currentUser.username}</span>
+                            <Link to={`/users/${currentUser.id}`}>
+                                <span className="splash-profile-username">{currentUser.username}</span>
+                            </Link>
                             <br></br>
                             <span className="splash-profile-fullname">{currentUser.fullname}</span>
                         </div>

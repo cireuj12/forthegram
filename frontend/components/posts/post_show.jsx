@@ -60,14 +60,20 @@ class PostShow extends React.Component {
                     <img className="post-show-item-image" src={this.props.post.photoUrl} />
                             <div className="post-show-container-right-side">
                                 <div className="post-show-username-box">
-                                    <img className="show-stock-user" src="https://fntarizona.com/wp-content/uploads/2017/05/shutterstock_624472886.jpg"
+                                    <Link to={`/users/${this.props.post.author_id}`}>
+                                    <img className="show-stock-user" src="/assets/userig.png"
                                      title="instagram-user"></img>
-                                    <div className="post-show-username">{this.props.post.username}</div>
+                                     </Link>
+                                    <div className="post-show-username">
+                                        <Link to={`/users/${this.props.post.author_id}`}>
+                                        {this.props.post.username}
+                                        </Link>
+                                    </div>
                                     {/* <button className="button-back-to-index" onClick={() => this.props.openModal('PostMenu')}> */}
                                     <Link to="/" className="button-back-to-index">
-                                    <img className="post-three-dots" src="https://static.thenounproject.com/png/658625-200.png"
-                                    title="instagram-three-dots"
-                                    alt="instagram-three-dots"></img>
+                                        <img className="post-three-dots" src="https://static.thenounproject.com/png/658625-200.png"
+                                        title="instagram-three-dots"
+                                        alt="instagram-three-dots"></img>
                                     </Link>
                                     {/* </button> */}
                                 </div>

@@ -58,13 +58,14 @@ class FollowButton extends React.Component {
     }
 
     followed() {
-            const session = this.props.session.id
-            const follows_array = [] //array of likeable_ids
-            if (Object.keys(this.props.follows).length !== 0 && this.props.follows.constructor === Object) {
-                const follows_array_iterate = Object.values(this.props.follows)
+            var session = this.props.session.id
+            var follows_array = [] //array of likeable_ids
+            var follows_object = this.props.follows
+            if (Object.keys(follows_object).length !== 0 && follows_object.constructor === Object) {
+                const follows_array_iterate = Object.values(follows_object)
                 for (let i = 0; i < follows_array_iterate.length; i++) {
                     if (follows_array_iterate[i].follower_id === session) {
-                    follows_array.push(follows_array_iterate[i].likeable_id)
+                    follows_array.push(follows_array_iterate[i].follower_id)
                     }
                 }
             }
@@ -81,17 +82,19 @@ class FollowButton extends React.Component {
     //Logic only render button if the user_page does not have the current_user
     //fetch follows by user_page
     render() {
-        console.log(this.followed())
         if (this.props.user.id === this.props.session.id) {
             return (<div></div>)
         } else {    
+                // debugger
                 if (this.followed()) {
+                    // debugger
                     return (
                         <div>
                             <button className="follow-button" onClick={this.deleteFollow}>UnFollow</button>
                         </div>
                     )
                 } else {
+                    // debugger
                     return (
                         <div>
                             <button className="follow-button" onClick={this.handleFollow}>Follow</button>
@@ -104,5 +107,5 @@ class FollowButton extends React.Component {
 //follow button logic incorrect
 //500 error when deleting
 
-export default withRouter(connect(msp,mdp)(FollowButton));
+export default connect(msp,mdp)(FollowButton);
 

@@ -19,7 +19,7 @@ class Api::FollowsController < ApplicationController
         #followers of userId in question
         # debugger
         if params[:userId]
-            @follows = Follow.where(:following_id => params[:userId])
+            @follows = Follow.where(:following_id => params[:userId]).or(Follow.where(:follower_id => params[:userId]))
             # debugger
             render :index
         else 
@@ -36,7 +36,7 @@ class Api::FollowsController < ApplicationController
         # @follow = current_user.follows.find(params[:id])
         @follow = Follow.find(params[:id])
         if @follow.destroy
-            render :index
+            render :show
         else 
             render json: @follow.errors.full_messages, status: 422
         end 
