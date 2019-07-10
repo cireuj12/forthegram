@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class CommentIndex extends React.Component {
 
@@ -34,10 +35,16 @@ class CommentIndex extends React.Component {
                     if (this.isLoggedIn(comment)) {
                         return (
                             <div key={comment.id}>
-                                <div className="initial-comment" onClick={() => {this.props.deleteComment(comment.id)}} >
-                                    <div className="initial-comment-username">{comment.username}</div> 
-                                    <div className="initial-comment-comment">{comment.body}</div>
-                                    <span className="tooltiptext">Delete Comment</span>
+                                <div className="initial-comment" >
+                                    <div className="initial-comment-username">
+                                        <Link to={`/users/${comment.user_id}`}>
+                                        {comment.username}
+                                        </Link>
+                                    </div> 
+                                    <div className="initial-comment-comment" onClick={() => {this.props.deleteComment(comment.id)}}>{comment.body}
+                                        <span className="tooltiptext">Delete Comment</span>
+                                    </div>
+            
                                 </div>
                             </div>
                         );}
@@ -45,7 +52,11 @@ class CommentIndex extends React.Component {
                         return (
                             <div key={comment.id}>
                                 <div className="initial-comment" >
-                                    <div className="initial-comment-username">{comment.username}</div> 
+                                    <div className="initial-comment-username">
+                                        <Link to={`/users/${comment.user_id}`}>
+                                            {comment.username}
+                                        </Link>
+                                    </div> 
                                     <div className="initial-comment-comment">{comment.body}</div>
                                 </div>
                             </div>

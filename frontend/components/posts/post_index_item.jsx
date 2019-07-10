@@ -127,7 +127,11 @@ class PostIndexItem extends React.Component {
                         <LikeCounter likes={this.props.likes} post ={this.props.post} />
                     <div className="comments-container">
                         <div className="initial-caption">
-                            <div className="initial-caption-username">{this.props.username}</div>
+                            <div className="initial-caption-username">
+                                <Link to={`/users/${this.props.post.author_id}`}>
+                                {this.props.username}
+                                </Link>
+                            </div>
                             <div className="initial-caption-caption">{this.props.post.caption}</div>
                         </div>
                         <div className="comments-list-box">
