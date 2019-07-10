@@ -155,6 +155,7 @@ textarea {
 .post-index-item-image {
     width: inherit;
     height: 550px;
+    object-fit: cover
 }
 
 .index-container {
@@ -351,6 +352,7 @@ textarea {
         .post-show-item-image {
             width: 600px;
             height: 600px;
+            object-fit: contain;
             // margin-left: -243px;
         }
 

@@ -50,6 +50,7 @@ export default class PhotoUploadForm extends React.Component {
         var elem = document.getElementById("uploadButton")
         elem.value = "Uploading...Please wait"
         elem.disabled = true;
+        // elem.style.fontWeight = "600";
 
         const formData = new FormData();
         formData.append('post[caption]', this.state.caption);
