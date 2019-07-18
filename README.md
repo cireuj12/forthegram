@@ -68,6 +68,18 @@ The database of users/sessions/passwords exist in the back end via Rails, throug
 
 Upon logging into the site. Just like Instagram, users can upload a photo via a post. The photo is stored on AWS while the information and the reference for the photo is stored on Heroku's DB.
 
+### Comment on Posts
+
+Comments can be created and deleted from Posts. The data on comments is stored on the backend database.
+
+### Like Posts
+
+Posts can also be liked, with a counter on each post showing the number of likes. The like data is also stored on the backend database.
+
+### User Dashboard and Following Users
+
+Users have a dashboard where their posts, their followers and who they follow are displayed. Users can follow other users by going to the dashboard.
+
 ## State 
 
 
@@ -85,9 +97,7 @@ Upon logging into the site. Just like Instagram, users can upload a photo via a 
 
 ## Future Features to be Implemented
 
-* The ability to comment on posts
-* The ability to like posts and comments
-* The ability to create a user profile and follow other users
+* The ability to like comments
 * The ability to search for other posts and users
 
 This README would normally document whatever steps are necessary to get the
