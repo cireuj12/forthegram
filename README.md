@@ -78,7 +78,7 @@ Posts can also be liked, with a counter on each post showing the number of likes
 
 ### User Dashboard and Following Users
 
-Users have a dashboard where their posts, their followers and who they follow are displayed. Users can follow other users by going to the dashboard.
+Users have a dashboard where their posts, their followers and who they follow are displayed. Users can follow other users by going to the dashboard
 
 ## State 
 
