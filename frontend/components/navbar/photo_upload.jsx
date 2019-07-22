@@ -47,20 +47,29 @@ export default class PhotoUploadForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
 
-        var elem = document.getElementById("uploadButton")
-        elem.value = "Uploading...Please wait"
-        elem.disabled = true;
-        // elem.style.fontWeight = "600";
-
-        const formData = new FormData();
-        formData.append('post[caption]', this.state.caption);
-        formData.append('post[author_id]', this.state.author_id);
-
-        if (this.state.photoFile) {
-            formData.append('post[photo]', this.state.photoFile);
+        if (!this.state.photoUrl) {
+            var preview = document.getElementById("imageText")
+            preview.innerHTML = "Please select a photo"
+            preview.style.color = "#ed4956";
         }
-        this.props.createPost(formData).then(() => this.props.closeModal())//.then(() => this.props.history.push('/')) // () => dispatch(closeModal()) test this
-    } //Warning: each Child in list should have unique "key prop"
+        else {
+            var elem = document.getElementById("uploadButton")
+            elem.value = "Uploading...Please wait"
+            elem.disabled = true;
+        
+            // elem.style.fontWeight = "600";
+    
+            const formData = new FormData();
+            formData.append('post[caption]', this.state.caption);
+            formData.append('post[author_id]', this.state.author_id);
+    
+            if (this.state.photoFile) {
+                formData.append('post[photo]', this.state.photoFile);
+            }
+            this.props.createPost(formData).then(() => this.props.closeModal())//.then(() => this.props.history.push('/')) // () => dispatch(closeModal()) test this
+        }
+
+} //Warning: each Child in list should have unique "key prop"
     //there is some lag
 
     render() { //this is rendering
@@ -77,7 +86,7 @@ export default class PhotoUploadForm extends React.Component {
                     onChange={this.handleInput}/>
                 <input className="select-file" type="file"
                     onChange={this.handleFile}/>
-                <div className="image-preview-label">Image Preview</div>
+                <div className="image-preview-label" id="imageText">Image Preview</div>
                     {preview}
                 <input id="uploadButton" 
                        type="submit"

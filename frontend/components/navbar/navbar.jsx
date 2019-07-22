@@ -23,7 +23,7 @@ const NavBar = ({ currentUser, openModal, logout }) => (
 
                 <div className="navBar-right-side">
 
-                    <a className="navBar-explore" href="explore">
+                    <a className="navBar-explore" href="/">
                         <img src="https://www.freeiconspng.com/uploads/compass-icon-22.png" width="40px" height="40px" alt="Compass Photos Icon" /></a>
                     <button className="navBar-addphoto" onClick={() => openModal('uploadPhotoForm')}>
                         <img src="https://cdn3.iconfinder.com/data/icons/instagram-18/512/199_Instagram_Plus_Sets_Upload-512.png"
