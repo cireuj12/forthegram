@@ -109,7 +109,7 @@ class UserProfile extends React.Component {
         // debugger
         if (!this.props.user) return null; // this fixed fails to load
 
-        const posts = this.props.posts.map(post => {
+        const posts = this.props.posts.reverse().map(post => {
             if (this.props.user.id === post.author_id) {
                 return (
                     <div key={post.id} className="img-div">
