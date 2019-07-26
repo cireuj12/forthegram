@@ -114,7 +114,7 @@ class UserProfile extends React.Component {
                 return (
                     <div key={post.id} className="img-div">
                         <Link to={`/posts/${post.id}`}>
-                        <img src={post.photoUrl}>
+                        <img className="profile-photos" src={post.photoUrl}>
                         </img>
                         </Link>
                     </div>

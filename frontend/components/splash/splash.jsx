@@ -52,7 +52,7 @@ const splash = ({ currentUser, logout }) => {
             </div>
                 <div className="footer-login">  
                 <div><a href="http://www.linkedin.com/in/eric-ju">LinkedIn</a></div>
-                        <div><a>Website</a></div>
+                        <div> <a href="http://www.ericju.com">Website</a></div>
                 <div><a href="http://www.github.com/cireuj12">GitHub</a></div>
                 <div><a href="http://www.instagram.com">Instagram</a></div>
                 </div>
@@ -87,7 +87,7 @@ const splash = ({ currentUser, logout }) => {
                 </div>
                 <div className="footer-index">  
                 <div><a href="http://www.linkedin.com/in/eric-ju">LinkedIn</a></div>
-                    <div><a>Website</a></div>
+                    <div><a href="http://www.ericju.com">Website</a></div>
                 <div><a href="http://www.github.com/cireuj12">GitHub</a></div>
                 <div><a href="http://www.instagram.com">Instagram</a></div>
                 </div>
