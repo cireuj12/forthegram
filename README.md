@@ -10,7 +10,7 @@ FortheGram is a functional clone of one of the most popular apps in the world - 
 
 ## Demo
 
-Here is the working Demo of the site : http://forthegram1.herokuapp.com/
+Here is the working Demo of the site : https://ftg1.herokuapp.com/
 
 ## Table of Content
 
