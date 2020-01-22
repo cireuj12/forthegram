@@ -98,7 +98,7 @@ class PostShow extends React.Component {
                                                 post={this.props.post}
                                                 session={this.props.session_id}
                                             />
-                                        <img className="comment-button" src="https://buzzhostingservices.com/images/instagram-comment-icon-1.png"
+                                        <img className="comment-button" src="https://cdn2.iconfinder.com/data/icons/instagram-ui/48/jee-69-512.png"
                                                 title="comment"
                                                 alt="comment"
                                                 onClick={() => {this.commentButton()} }
